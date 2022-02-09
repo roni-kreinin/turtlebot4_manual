@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# ROS2 Tests
+# Diagnostics
 
 Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
