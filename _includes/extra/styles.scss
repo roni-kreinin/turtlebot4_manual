@@ -13,11 +13,6 @@
     content:"";
 }
 
-// Remove Home icon
-.fa-home::before{
-    content: "";
-}
-
 .title a {
     position: relative;
     top: 45px;
@@ -27,3 +22,20 @@
     position: relative;
     top: 45px;
 }
+
+// Remove Home icon
+.fa-home::before{
+    content: "";
+}
+
+// Remove plus icon
+.fa-plus-square-o:before{
+    content: "";
+}
+
+// Change caption font color in table of contents
+.toctree .caption {
+    color: #ffcd00;
+}
+
+
