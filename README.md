@@ -16,6 +16,7 @@ Build and start a local server:
 
 ```bash
 cd turtlebot4-user-manual
+make
 make server
 ```
 
