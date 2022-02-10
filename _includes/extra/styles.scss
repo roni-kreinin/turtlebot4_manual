@@ -1,0 +1,29 @@
+.header {
+    color: #fff;
+    background: #000000;
+
+    background-image:url('/_includes/images/full_logo.png');
+    background-size: 174px 60px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 5px;
+    display: inline-block;
+    
+    height: 140px;
+    content:"";
+}
+
+// Remove Home icon
+.fa-home::before{
+    content: "";
+}
+
+.title a {
+    position: relative;
+    top: 45px;
+}
+
+.header input{
+    position: relative;
+    top: 45px;
+}
