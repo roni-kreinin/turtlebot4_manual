@@ -1,178 +1,96 @@
 ---
-sort: 4
+sort: 2
 ---
 
 # Turtlebot4 Packages
 
-Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+The Turtlebot4 has 4 main repositories for software: [`turtlebot4`](https://github.com/turtlebot/turtlebot4), [`turtlebot4_robot`](https://github.com/turtlebot/turtlebot4_robot), [`turtlebot4_desktop`](https://github.com/turtlebot/turtlebot4_desktop), and [`turtlebot4_simulator`](https://github.com/turtlebot/turtlebot4_simulator). Each repository is also a [metapackage](http://wiki.ros.org/Metapackages) and contains one or more ROS2 packages.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+## Turtlebot4
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+The `turtlebot4` metapackage contains common packages that are used by both `turtlebot4_robot` and `turtlebot4_simulator`.
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
+### Description
 
-# Header 1
+The `turtlebot4_description` package contains the URDF description of the robot and the mesh files for each component.
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+The description can be published with the `robot_state_publisher`.
 
-## Header 2
+### Messages
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+The `turtlebot4_msgs` package contains the custom messages used on the Turtlebot4:
 
-### Header 3
+* [UserButton](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserButton.msg): User Button states.
+* [UserLed](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserLed.msg): User Led control.
+* [UserLed](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserDisplay.msg): User Display states.
 
-```
-This is a code block following a header.
-```
+The Turtlebot4 can also use all of the messages, actions, and services that the iRobot® Create3® platform supports. See [irobot_create_msgs](https://github.com/iRobotEducation/irobot_create_msgs) for more details.
 
-#### Header 4
+### Navigation
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+The `turtlebot4_navigation` packages contains launch and configuration files for using SLAM and navigation on the Turtlebot4.
 
-##### Header 5
+### Node
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+The `turtlebot4_node` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_node` that controls the robots HMI as well as other logic. This node is used by both the physical robot, and the simulator robot.
 
-###### Header 6
+## Turtlebot4 Robot
 
-| What    | Follows  |
-| ------- | -------- |
-| A table | A header |
-| A table | A header |
-| A table | A header |
+The `turtlebot4_robot` metapackage contains packages that are used by the physical Turtlebot4 robot and are run on the robots Raspberry Pi.
 
----
+### Base
 
-There's a horizontal rule above and below this.
+The `turtlebot4_base` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_base_node` which runs on the physical robot. This node interfaces with the GPIO lines of the Raspberry Pi which allows it to read the state of the buttons, as well as write to the LEDs and display.
 
----
+### Bringup
 
-Here is an unordered list:
+The `turtlebot4_bringup` package contains the launch and configuration files to run the robots software.
 
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
+Launch files:
+* [Joy Teleop](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/joy_teleop.launch.py): Launches nodes to enable the bluetooth controller.
+* [OAKD](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/oakd.launch.py): Launches the OAK-D nodes.
+* [RPLIDAR](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/rplidar.launch.py): Launches the RPLIDAR node.
+* [Robot](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/robot.launch.py): Launches the Turtlebot4 nodes.
+* [Lite](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/lite.launch.py): Launches the Turtlebot4 Lite.
+* [Standard](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/standard.launch.py): Launches the Turtlebot4 Standard.
 
-And an ordered list:
+Config files:
+* [PS4](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/ps4.config.yaml): Configurations for the Turtlebot4 controller.
+* [Turtlebot4](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4.yaml): Configurations for the `turtlebot4_node` and `turtlebot4_base_node`.
 
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
+### Diagnostics
 
-And an unordered task list:
+The `turtlebot4_diagnostics` packages contains the source code and launch files for the Turtlebot4 diagnostics updater.
 
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
+### Tests
 
-And a "mixed" task list:
+The `turtlebot4_diagnostics` packages contains the source code for the Turtlebot4 system test scripts.
 
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
+## Turtlebot4 Desktop
 
-And a nested list:
+The `turtlebot4_desktop` metapackage contains packages used for visualising and interfacing with the Turtlebot4 from a PC.
 
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
+### Visualisation
 
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
+The `turtlebot4_viz` package contains launch files and configurations for viewing the robot in Rviz2, and viewing the diagnostics.
 
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
+Launch files:
+* [View Diagnostics](https://github.com/turtlebot/turtlebot4_desktop/blob/galactic/turtlebot4_viz/launch/view_diagnostics.launch.py): Launches `rqt_robot_monitor` to view diagnostic data.
+* [View Model](https://github.com/turtlebot/turtlebot4_desktop/blob/galactic/turtlebot4_viz/launch/view_model.launch.py): Launches Rviz2. Used to view the model and sensor data.
+* [View Robot](https://github.com/turtlebot/turtlebot4_desktop/blob/galactic/turtlebot4_viz/launch/view_robot.launch.py): Launches Rviz2. Used to view the robot while navigating.
 
----
+## Turtlebot4 Simulator
 
-Tables should have bold headings and alternating shaded rows.
+The `turtlebot4_simulator` metapackage contains packages used to simulate the Turtlebot4 in Ignition Gazebo.
 
-| Artist          | Album          | Year |
-| --------------- | -------------- | ---- |
-| Michael Jackson | Thriller       | 1982 |
-| Prince          | Purple Rain    | 1984 |
-| Beastie Boys    | License to Ill | 1986 |
+### Ignition Bringup
 
-If a table is too wide, it should condense down and/or scroll horizontally.
+The `turtlebot4_ignition_bringup` package contains launch files and configurations to launch Ignition Gazebo.
 
-<!-- prettier-ignore-start -->
+### Ignition GUI Plugins
 
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
+The `turtlebot4_ignition_gui_plugins` package contains the source code for the Turtlebot4 HMI GUI plugin.
 
-<!-- prettier-ignore-end -->
+### Ignition Toolbox
 
----
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-var foo = "bar";
-```
-
-Code can also use syntax highlighting.
-
-```javascript
-var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language   | Code               |
-| ---------- | ------------------ |
-| Javascript | `var foo = "bar";` |
-| Ruby       | `foo = "bar"`      |
-
----
-
-Small images should be shown at their actual size.
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-Large images should always scale down and fit in the content container.
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```
+The `turtlebot4_ignition_toolbox` package contains the source code for the Turtlebot4 HMI node.
