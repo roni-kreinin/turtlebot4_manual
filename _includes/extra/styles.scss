@@ -40,22 +40,40 @@
 
 // Change hyperlink text color to turtlebot green
 a {
-    color: #60BF56;
+    color: #366d30;
 }
 
 .markdown-body a {
-    color: #60BF56;
+    color: #366d30;
 }
 
 .markdown-body a code {
-    color: #60BF56;
+    color: #366d30;
 }
 
 .markdown-body code {
-    color: #60BF56;
+    color: #366d30;
 }
 
 .addons-wrap .status .branch .name {
-    color: #60BF56;
+    color: #366d30;
+}
+
+figure {
+    padding: 4px;
+    margin: auto;
+  }
+
+figcaption {
+    background-color: white;
+    color: black;
+    font-style: italic;
+    font-size: small;
+    padding: 2px;
+    text-align: center;
+  }
+
+.aligncenter {
+    text-align: center;
 }
 
