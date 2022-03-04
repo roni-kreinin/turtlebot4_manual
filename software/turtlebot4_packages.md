@@ -81,7 +81,7 @@ ros2 launch turtlebot4_navigation nav_bringup.launch.py localization:=true nav2:
 
 ### Node
 
-The `turtlebot4_node` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_node` that controls the robots HMI as well as other logic. This node is used by both the physical robot, and the simulator robot.
+The `turtlebot4_node` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_node` that controls the robots HMI as well as other logic. This node is used by both the physical robot and the simulated robot.
 
 Publishers:
 - **/hmi/display**: *turtlebot4_msgs/msg/UserDisplay*
@@ -112,8 +112,181 @@ Service Clients:
     - description: Power off the robot.
 
 Action Clients:
-- **/e_stop**: *irobot_create_msgs/srv/EStop*
-- **/robot_power**: *irobot_create_msgs/srv/RobotPower*
+- **/dock**: *irobot_create_msgs/action/DockServo*
+    - description: Command the robot to dock into its charging station.
+- **/wall_follow**: *irobot_create_msgs/action/WallFollow*
+    - description: Command the robot to wall follow on left or right side using bump and IR sensors.
+- **/undock**: *irobot_create_msgs/action/Undock*
+    - description: Command the robot to undock from its charging station.
+
+#### Functions
+
+The node has a set of static functions that can be used either with a button or through the display menu.
+
+Currently, the supported functions are:
+
+- **Dock**: Call the */dock* action.
+- **Undock**: Call the */undock* action.
+- **Wall Follow Left**: Call the */wall_follow* action with direction `FOLLOW_LEFT` and a duration of 10 seconds.
+- **Wall Follow Right**: Call the */wall_follow* action with direction `FOLLOW_RIGHT` and a duration of 10 seconds.
+- **Power**: Call the */robot_power* service and power off the robot.
+- **EStop**: Call the */e_stop* service and toggle EStop state.
+
+The Turtlebot4 Standard also supports the following menu functions:
+
+- **Scroll Up**: Scroll menu up.
+- **Scroll Down**: Scroll menu down.
+- **Back**: Exit message screen or return to first menu entry.
+- **Select**: Select currently highlighted menu entry.
+- **Help**: Print help statement.
+
+#### Configuration
+
+This node can be configured using a parameter *.yaml* file. The default robot parameters can be found [here](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4.yaml). 
+
+Parameters:
+
+- **wifi.interface**: The Wi-Fi interface being used by the computer. This is used to find the current IP address of the computer.
+- **menu.entries**: Set menu entries to be displayed. Each entry must be one of the support [functions](#functions).
+- **buttons**: Set the function of Create 3 and HMI buttons.
+- **controller**: Set the function of Turtlebot4 Controller buttons.
+
+#### Buttons
+
+The `Buttons` class in `turtlebot4_node` provides functionality to all buttons on the robot. This includes the Create 3 buttons, HMI buttons, and Turtlebot4 Controller buttons.
+The node receives button states from the */interface_buttons*, */hmi/buttons*, and */joy* topics.
+
+Each button can be configured to have either a single function when pressed, or two functions by using a short or long press. This is done through [configuration](#configuration).
+
+Supported buttons:
+
+```yaml
+buttons:
+    create3_1:
+    create3_power:
+    create3_2:
+    hmi_1:
+    hmi_2:
+    hmi_3:
+    hmi_4:
+
+controller:
+    a:
+    b:
+    x:
+    y:
+    up:
+    down:
+    left:
+    right:
+    l1:
+    l2:
+    l3:
+    r1:
+    r2:
+    r3:
+    share:
+    options:
+    home:
+```
+
+##### Example
+
+Lets say we want the Turtlebot4 Standard to have the following button functions:
+- Make a short press of Create 3 button 1 toggle EStop.
+- Power off robot with 5 second press of Home on the Turtlebot4 Controller.
+- Short press of HMI button 1 performs Wall Follow Left, long press of 3 seconds performs Wall Follow Right.
+
+Create a new yaml file:
+
+```bash
+cd /home/ubuntu/turtlebot4_ws
+touch example.yaml
+```
+
+Use your favourite text editor and paste the following into `example.yaml`:
+```yaml
+turtlebot4_node:
+  ros__parameters:
+    buttons:  
+      create3_1: ["EStop"]
+      hmi_1: ["Wall Follow Left", "Wall Follow Right", "3000"]
+
+    controller:
+      home: ["Power", "5000"]
+```
+
+Launch the robot with your new configuration:
+
+```bash
+ros2 launch turtlebot4_bringup standard.launch.py param_file:=/home/ubuntu/turtlebot4_ws/example.yaml
+```
+
+The buttons should now behave as described in `example.yaml`.
+
+#### LEDs
+
+The `Leds` class in `turtlebot4_node` controls the states of the HMI LEDs on the Turtlebot4 Standard. It is not used for the Turtlebot4 Lite.
+
+There are 5 status LEDs which are controlled by the node: `POWER`, `MOTOR`, `COMMS`, `WIFI`, and `BATTERY`. There are also 2 user LEDs: `USER_1` and `USER_2` which are controlled by the user via the */hmi/led* topic. The `BATTERY` and `USER_2` LEDs consist of a red and green LED which allows them to be turned on as either green, red, or yellow (red + green). The rest are green only.
+
+Status LEDs:
+- **POWER**: Always ON while `turtlebot4_node` is running.
+- **MOTOR**: ON when wheels are enabled, OFF when wheels are disabled.
+    - Wheel status is reported on the */wheel_status* topic.
+- **COMMS**: ON when communication with Create 3 is active. OFF otherwise.
+    - Receiving data on the */battery_state* topic implies that communication is active.
+- **WIFI**: ON when an IP address can be found for the Wi-Fi interface specified in the [configuration](#configuration).
+- **BATTERY**: Colour and pattern will vary based on battery percentage.
+    - Battery percentage is received on */battery_state* topic.
+
+User LEDs:
+
+The user LEDs can be set by publishing to the */hmi/led* topic with a [UserLed](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserLed.msg) message.
+
+UserLed message:
+
+- **led**: Which available LED to use.
+    - `uint8 USER_LED_1 = 0`
+    - `uint8 USER_LED_2 = 1`
+- **color**: Which color to set the LED to.
+    - `uint8 COLOR_OFF = 0`
+    - `uint8 COLOR_GREEN = 1`
+    - `uint8 COLOR_RED = 2`
+    - `uint8 COLOR_YELLOW = 3`
+- **blink_period**: Blink period in milliseconds.
+    - `uint32 ms`
+- **duty_cycle**: Percentage of blink period that the LED is ON.
+    - `float64 (0.0 to 1.0)`
+
+##### Examples
+
+Set `USER_1` to solid green:
+
+```bash
+ros2 topic pub /hmi/led turtlebot4_msgs/msg/UserLed "led: 0
+color: 1
+blink_period: 1000
+duty_cycle: 1.0" --once
+```
+
+Set `USER_1` OFF:
+
+```bash
+ros2 topic pub /hmi/led turtlebot4_msgs/msg/UserLed "led: 0
+color: 0
+blink_period: 1000
+duty_cycle: 1.0" --once
+```
+
+Blink `USER_2` red at 5hz with 50% duty cycle:
+
+```bash
+ros2 topic pub /hmi/led turtlebot4_msgs/msg/UserLed "led: 1
+color: 2
+blink_period: 200
+duty_cycle: 0.5" --once
+```
 
 ## Turtlebot4 Robot
 
