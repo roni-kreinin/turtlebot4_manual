@@ -7,7 +7,7 @@ sort: 1
 
 ## Hardware Specifications
 
-| Feature                  | Lite <img src="images/lite_render.png" alt="Lite Render" width="150" style="vertical-align:middle;"/> | Standard <img src="images/standard_render.png" alt="Standard Render" width="200" style="vertical-align:middle;"/> |
+| Feature                  | Lite <img src="media/lite_render.png" alt="Lite Render" width="150" style="vertical-align:middle;"/> | Standard <img src="media/standard_render.png" alt="Standard Render" width="200" style="vertical-align:middle;"/> |
 |:-------------------------|:------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
 | Size (L x W x H)         | 342 x 339 x 192 mm                                                                                    | 342 x 339 x 351 mm                                                                                                |
 | Weight                   | 3270 g                                                                                                | 3945 g                                                                                                            |
@@ -33,16 +33,16 @@ sort: 1
 
 ## Turtlebot4 Standard
 
-<img src="images/standard_render.png" alt="Standard Render" width="700" style="position:relative;left:50px;"/>
+<img src="media/standard_render.png" alt="Standard Render" width="700" style="position:relative;left:50px;"/>
 
 ## Turtlebot4 Lite
 
-<img src="images/lite_render.png" alt="Standard Render" width="700" style="position:relative;left:50px;"/>
+<img src="media/lite_render.png" alt="Standard Render" width="700" style="position:relative;left:50px;"/>
 
 ## Sensors
 
 ### RPLIDAR A1M8
-<img src="images/rplidar_a1m8.png" alt="Rplidar" width="500" style="position:relative;left:150px;"/>
+<img src="media/rplidar_a1m8.png" alt="Rplidar" width="500" style="position:relative;left:150px;"/>
 
 
 The RPLIDAR A1M8 is a 360 degree Laser Range Scanner with a 12m range. It is used to generate a 2D scan of the robots surroundings.
@@ -50,8 +50,8 @@ Both the Turtlebot4 Lite and Standard use this sensor. For more information, cli
 
 ### OAK-D-Pro
 
-<img src="images/oak-d-pro.png" alt="OAK-D-Pro" width="500" style="position:relative;left:150px;"/>
+<img src="media/oak-d-pro.png" alt="OAK-D-Pro" width="500" style="position:relative;left:150px;"/>
 
 ### OAK-D-Lite
 
-<img src="images/oak-d-lite.png" alt="OAK-D-Lite"  width="500" style="position:relative;left:150px;"/>
+<img src="media/oak-d-lite.png" alt="OAK-D-Lite"  width="500" style="position:relative;left:150px;"/>

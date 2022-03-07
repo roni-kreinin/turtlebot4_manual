@@ -270,6 +270,11 @@ blink_period: 1000
 duty_cycle: 1.0" --once
 ```
 
+<figure class="aligncenter">
+    <img src="media/user_1_green.png" alt="User 1 Green" style="width: 35%"/>
+    <figcaption>User 1: Solid Green</figcaption>
+</figure>
+
 Set `USER_1` OFF:
 
 ```bash
@@ -279,14 +284,48 @@ blink_period: 1000
 duty_cycle: 1.0" --once
 ```
 
-Blink `USER_2` red at 5hz with 50% duty cycle:
+<figure class="aligncenter">
+    <img src="media/user_1_off.png" alt="User 1 Off" style="width: 35%"/>
+    <figcaption>User 1: Off</figcaption>
+</figure>
+
+Blink `USER_2` red at 1hz with 50% duty cycle:
 
 ```bash
 ros2 topic pub /hmi/led turtlebot4_msgs/msg/UserLed "led: 1
 color: 2
-blink_period: 200
+blink_period: 1000
 duty_cycle: 0.5" --once
 ```
+
+<figure class="aligncenter">
+    <img src="media/user_2_red_blink.gif" alt="User 2 Red Blink" style="width: 35%"/>
+    <figcaption>User 2: Red, 5hz, 50%</figcaption>
+</figure>
+
+#### Display
+
+The `Display` class in `turtlebot4_node` controls the HMI display of the Turtlebot4 Standard. The physical display is a 128x64 OLED which is controlled with a SSD1306 driver.
+
+The display has a header line which contains the IP address of the Wi-Fi interface specified in [configuration](#configuration), as well as the battery percentage received on the */battery_state* topic. The display also has 5 additional lines which are used for the menu by default. The menu entries are specified in [configuration](#configuration) and are a set of the available functions. The 5 menu lines can be overwritten by publishing to the */hmi/display/message* with a **String** message.
+
+```note
+The menu can have any number of entries. If there are more than 5 entries, the user will have to scroll down to see the entries that do not fit on the 5 menu lines.
+```
+
+
+##### Menu Control
+
+The Turtlebot4 display has a simple scrolling menu. There are 4 control functions for the menu: Scroll up, Scroll down, Select, and Back. 
+
+* Scroll up and down allow the users to navigate through the menu entries and by default are mapped to user buttons 3 and 4 respectively. 
+* The select function will call the currently selected menu entry. This can trigger an action such as docking, a service such as EStop, or display a message such as the Help message. This function is mapped to user button 1 by default.
+* The back function allows the user to return back to the menu from a message screen. If the menu is already showing the menu entries, it will return to showing the first 5 menu entries and the first entry will be highlighted.
+
+<figure class="aligncenter">
+    <img src="media/menu_control.gif" alt="Turtlebot4 Menu Controls" style="width: 35%"/>
+    <figcaption>Turtlebot4 Menu Controls</figcaption>
+</figure>
 
 ## Turtlebot4 Robot
 
@@ -383,7 +422,7 @@ The `turtlebot4_ignition_gui_plugins` package contains the source code for the T
 The [Turtlebot4 HMI GUI plugin](https://github.com/turtlebot/turtlebot4_simulator/tree/galactic/turtlebot4_ignition_gui_plugins/Turtlebot4Hmi) is only used for the standard model. The lite model uses the [Create3 HMI GUI plugin](https://github.com/iRobotEducation/create3_sim/tree/main/irobot_create_ignition/irobot_create_ignition_plugins/Create3Hmi).
 
 <figure class="aligncenter">
-    <img src="images/turtlebot4_hmi_gui.png" alt="Turtlebot4 HMI GUI" style="width: 35%"/>
+    <img src="media/turtlebot4_hmi_gui.png" alt="Turtlebot4 HMI GUI" style="width: 35%"/>
     <figcaption>Turtlebot4 HMI GUI plugin</figcaption>
 </figure>
 
