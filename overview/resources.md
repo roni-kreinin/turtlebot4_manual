@@ -27,6 +27,7 @@ sort: 2
   - Desktop visualization package: <https://github.com/turtlebot/turtlebot4_desktop>
   - Simulator package: <https://github.com/turtlebot/turtlebot4_simulator>
   - Robot package: <https://github.com/turtlebot/turtlebot4_robot>
+  - Original SSD1306 driver: <https://github.com/afiskon/stm32-ssd1306>
 
 ### iRobot Create® 3
   - Product details: <https://edu.irobot.com/what-we-offer/create3>
