@@ -48,3 +48,22 @@ ssh ubuntu@xxx.xxx.xxx.xxx
 - Click connect and enter your WiFi ssid and password
 - Wait for it to connect to WiFi
 - On your PC, run `ros2 topic list` to ensure that the Create3 is publishing its topics.
+
+## Turtlebot4 Controller Setup
+
+- SSH into the Turtlebot4
+
+```bash
+sudo bluetoothctl --agent=NoInputNoOutput
+```
+
+- The `bluetoothd` CLI interface will start.
+- Type `scan on` and press enter.
+- Press and hold both the home and share buttons on the Turtlebot4 controller until the light starts blinking.
+- In the CLI look for a *Wireless Controller* device to be found. It will have a MAC address similar to `A0:5A:5C:DF:4D:7F`.
+- Copy the MAC address.
+- In the CLI enter `trust MAC_ADDRESS`, replacing `MAC_ADDRESS` with the controllers address.
+- Then, enter `pair MAC_ADDRESS`.
+- Finally, enter `connect MAC_ADDRESS`.
+- The CLI should report that the controller has been connected and the light on the controller will turn blue.
+- Enter `exit` to exit the CLI. 
