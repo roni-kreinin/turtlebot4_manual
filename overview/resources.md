@@ -39,6 +39,7 @@ sort: 2
   - OAK-D-Pro product details: <https://docs.luxonis.com/projects/hardware/en/latest/pages/DM9098pro.html>
   - Depthai-ROS: <https://github.com/luxonis/depthai-ros/tree/main>
   - Depthai-ROS Examples: <https://github.com/luxonis/depthai-ros-examples>
+  - API Documentation: <https://docs.luxonis.com/projects/api/en/latest/>
 
 ### SLAMTEC
   - RPLIDAR A1M8: <https://www.slamtec.com/en/Lidar/A1>
