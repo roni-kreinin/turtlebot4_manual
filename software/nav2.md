@@ -4,175 +4,65 @@ sort: 6
 
 # Nav2
 
-Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+TODO: Add images of real robot
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+[Nav2](https://navigation.ros.org/) is the official navigation stack in ROS2. Nav2 can be used to calculate and execute a travel path for the robot by using a map of its surroundings. The map can be loaded at launch or generated with [SLAM](slam.md) while navigating.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
+## Launching Navigation
 
-# Header 1
+### Launch files
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+- **Nav2 Bringup**: Launches Nav2 nodes, with the option to launch SLAM or Localization as well.
 
-## Header 2
+### Parameters
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+- **nav2**: Whether to launch Nav2 nodes.
+  - *options*: [true, false]
+  - *default*: true
+- **slam**: Launch SLAM along with Nav2.
+  - *options*: [off, sync, async]
+  - *default*: off
+- **localization**: Launch localization with an existing map
+  - *options*: [true, false]
+  - *default*: false
+- **map**: Path to existing map.
+  - *default*: /path/to/turtlebot4_navigation/maps/depot.yaml
+- **params_file**: Full path to parameter file for Nav2 and localization nodes.
+  - *default*: /path/to/turtlebot4_navigation/config/nav2.yaml
 
-### Header 3
+### Configuration
 
-```
-This is a code block following a header.
-```
+The default Turtlebot4 configuration can be found [here](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/config/nav2.yaml). It is a slightly modified version of the [default](https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/params/nav2_params.yaml) configuration from the Nav2 github. The configuration file allows the user to modify parameters such as velocity while pathing, the radius of the robot, costmap update frequencies and resolutions, and more. For more information, read the Nav2 [configuration guide](https://navigation.ros.org/configuration/index.html).
 
-#### Header 4
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+### Examples
 
-##### Header 5
+Launching Nav2 with synchronous SLAM:
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What    | Follows  |
-| ------- | -------- |
-| A table | A header |
-| A table | A header |
-| A table | A header |
-
----
-
-There's a horizontal rule above and below this.
-
----
-
-Here is an unordered list:
-
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
-
-And an ordered list:
-
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
-
-And an unordered task list:
-
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
-
-And a nested list:
-
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
-
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
-
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
-
----
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist          | Album          | Year |
-| --------------- | -------------- | ---- |
-| Michael Jackson | Thriller       | 1982 |
-| Prince          | Purple Rain    | 1984 |
-| Beastie Boys    | License to Ill | 1986 |
-
-If a table is too wide, it should condense down and/or scroll horizontally.
-
-<!-- prettier-ignore-start -->
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-<!-- prettier-ignore-end -->
-
----
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-var foo = "bar";
+```bash
+ros2 launch turtlebot4_navigation nav2_bringup.launch.py slam:=sync
 ```
 
-Code can also use syntax highlighting.
+The map and costmaps can be viewed in Rviz2:
 
-```javascript
-var foo = "bar";
+```bash
+ros2 launch turtlebot4_viz view_robot.launch.py
 ```
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+<figure class="aligncenter">
+    <img src="media/nav2_slam.png" alt="Nav2 w/ SLAM" style="width: 90%"/>
+    <figcaption>Nav2 with SLAM</figcaption>
+</figure>
 
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
+Obstacles that are detected on the map will have a padding around with a radius equivalent to the radius of the robot. When navigating, Nav2 will drive the robot outside of the padded area to avoid hitting obstacles.
 
-Inline code inside table cells should still be distinguishable.
 
-| Language   | Code               |
-| ---------- | ------------------ |
-| Javascript | `var foo = "bar";` |
-| Ruby       | `foo = "bar"`      |
+#### Navigating with Rviz2
 
----
+The easiest way to set a navigation goal is to use **Nav2 Goal** in Rviz2. With Nav2 running, select the Nav2 Goal tool at the top of Rviz2, and click the location on the map where you would like to navigate to.
 
-Small images should be shown at their actual size.
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-Large images should always scale down and fit in the content container.
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```
+<figure class="aligncenter">
+    <img src="media/nav2_goal.gif" alt="Nav2 Goal" style="width: 90%"/>
+    <figcaption>Navigating with Rviz2</figcaption>
+</figure>
