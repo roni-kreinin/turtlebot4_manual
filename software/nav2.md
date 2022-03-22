@@ -4,7 +4,7 @@ sort: 6
 
 # Nav2
 
-TODO: Add images of real robot
+TODO: Add images from real robot
 
 [Nav2](https://navigation.ros.org/) is the official navigation stack in ROS2. Nav2 can be used to calculate and execute a travel path for the robot by using a map of its surroundings. The map can be loaded at launch or generated with [SLAM](slam.md) while navigating.
 
@@ -33,7 +33,7 @@ TODO: Add images of real robot
 
 ### Configuration
 
-The default Turtlebot4 configuration can be found [here](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/config/nav2.yaml). It is a slightly modified version of the [default](https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/params/nav2_params.yaml) configuration from the Nav2 github. The configuration file allows the user to modify parameters such as velocity while pathing, the radius of the robot, costmap update frequencies and resolutions, and more. For more information, read the Nav2 [configuration guide](https://navigation.ros.org/configuration/index.html).
+The default TurtleBot 4 configuration can be found [here](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/config/nav2.yaml). It is a slightly modified version of the [default](https://github.com/ros-planning/navigation2/blob/main/nav2_bringup/params/nav2_params.yaml) configuration from the Nav2 github. The configuration file allows the user to modify parameters such as velocity while pathing, the radius of the robot, costmap update frequencies and resolutions, and more. For more information, read the Nav2 [configuration guide](https://navigation.ros.org/configuration/index.html).
 
 
 ### Examples

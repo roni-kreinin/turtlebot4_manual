@@ -4,9 +4,9 @@ sort: 5
 
 # SLAM
 
-TODO: Add images of real robot
+TODO: Add images from real robot
 
-[Simultaneous localization and mapping (SLAM)](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) is a method used in robotics for creating a map of the robots surroundings while keeping track of the robots position in that map. The Turtlebot4 uses [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) to generate maps by combining odometry data from the Create 3 with laser scans from the RPLIDAR. `slam_toolbox` supports both synchronous and asynchronous SLAM nodes.
+[Simultaneous localization and mapping (SLAM)](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) is a method used in robotics for creating a map of the robots surroundings while keeping track of the robots position in that map. The TurtleBot 4 uses [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) to generate maps by combining odometry data from the Create 3 with laser scans from the RPLIDAR. `slam_toolbox` supports both synchronous and asynchronous SLAM nodes.
 
 <figure class="aligncenter">
     <img src="media/depot.png" alt="Depot map" style="width: 70%"/>
@@ -26,7 +26,7 @@ ros2 launch turtlebot4_navigation slam_sync.launch.py
 
 ## Asynchronous SLAM
 
-Asynchronous SLAM will update the map as fast as the processor running it can handle. This may cause it to drop some laser scans or odometry data. Maps created with asynchronous SLAM may have reduced accuracy and detail, but this method requires significantly less proccessing power. This approach is ideal for use on the Turtlebot4's Raspberry Pi. The default parameters for asynchronous SLAM use a reduced map resolution to further improve performance on the Pi.
+Asynchronous SLAM will update the map as fast as the processor running it can handle. This may cause it to drop some laser scans or odometry data. Maps created with asynchronous SLAM may have reduced accuracy and detail, but this method requires significantly less proccessing power. This approach is ideal for use on the TurtleBot 4's Raspberry Pi. The default parameters for asynchronous SLAM use a reduced map resolution to further improve performance on the Pi.
 
 Launching asynchronous SLAM:
 

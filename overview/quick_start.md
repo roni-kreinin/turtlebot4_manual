@@ -12,14 +12,14 @@ sort: 3
 
 - On the first boot, the Raspberry Pi will enter AP mode which will allow you to connect to it over WiFi.
 
-- On a PC, connect to the `Turtlebot4` WiFi network. The password is also `Turtlebot4`.
+- On a PC, connect to the `TurtleBot 4` WiFi network. The password is also `TurtleBot 4`.
 
 - Once connected, you can SSH into the Raspberry Pi to configure its WiFi.
 
 ```bash
 ssh ubuntu@10.42.0.1
 ```
-- The default password is `turtlebot4`
+- The default password is `TurtleBot 4`
 
 - In the home folder there will be a script called `wifi.sh` which can be used to configure the Raspberry Pi's WiFi:
 
@@ -32,9 +32,9 @@ The Regulatory domain is based on the country you live in. For a full list, clic
 ```
 
 - Your Raspberry Pi will reboot and connect to your WiFi network.
-- On your PC, run `ros2 topic list` to ensure that the Turtlebot4 is publishing its topics.
-- Run `ros2 topic echo /ip` to read the new IP of the Raspberry Pi. On the Turtlebot4 Standard this will also be displayed on the screen.
-- You can now SSH into the Turtlebot4's Raspberry Pi at the new IP and begin using it.
+- On your PC, run `ros2 topic list` to ensure that the TurtleBot 4 is publishing its topics.
+- Run `ros2 topic echo /ip` to read the new IP of the Raspberry Pi. On the TurtleBot 4 Standard this will also be displayed on the screen.
+- You can now SSH into the TurtleBot 4's Raspberry Pi at the new IP and begin using it.
 
 ```bash
 ssh ubuntu@xxx.xxx.xxx.xxx
@@ -49,9 +49,9 @@ ssh ubuntu@xxx.xxx.xxx.xxx
 - Wait for it to connect to WiFi
 - On your PC, run `ros2 topic list` to ensure that the Create3 is publishing its topics.
 
-## Turtlebot4 Controller Setup
+## TurtleBot 4 Controller Setup
 
-- SSH into the Turtlebot4
+- SSH into the TurtleBot 4
 
 ```bash
 sudo bluetoothctl --agent=NoInputNoOutput
@@ -59,7 +59,7 @@ sudo bluetoothctl --agent=NoInputNoOutput
 
 - The `bluetoothd` CLI interface will start.
 - Type `scan on` and press enter.
-- Press and hold both the home and share buttons on the Turtlebot4 controller until the light starts blinking.
+- Press and hold both the home and share buttons on the TurtleBot 4 controller until the light starts blinking.
 - In the CLI look for a *Wireless Controller* device to be found. It will have a MAC address similar to `A0:5A:5C:DF:4D:7F`.
 - Copy the MAC address.
 - In the CLI enter `trust MAC_ADDRESS`, replacing `MAC_ADDRESS` with the controllers address.

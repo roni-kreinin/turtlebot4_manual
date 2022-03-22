@@ -4,7 +4,7 @@ sort: 7
 
 # Simulation
 
-The simulator allows the user to test the robot without the need for a physical robot. It has all of the same functionality as the real robot. The Turtlebot4 can be simulated using [Ignition Gazebo](https://ignitionrobotics.org/home). Unlike [Gazebo](http://gazebosim.org/), Ignition Gazebo does not natively support ROS. Instead, it has its own transport stack with a similar topic and node implementation. To communicate with ROS, we can use the [ros_ign_bridge](https://github.com/ignitionrobotics/ros_ign/tree/ros2/ros_ign_bridge). This ROS node translates data from ROS to Ignition, and vice versa.
+The simulator allows the user to test the robot without the need for a physical robot. It has all of the same functionality as the real robot. The TurtleBot 4 can be simulated using [Ignition Gazebo](https://ignitionrobotics.org/home). Unlike [Gazebo](http://gazebosim.org/), Ignition Gazebo does not natively support ROS. Instead, it has its own transport stack with a similar topic and node implementation. To communicate with ROS, we can use the [ros_ign_bridge](https://github.com/ignitionrobotics/ros_ign/tree/ros2/ros_ign_bridge). This ROS node translates data from ROS to Ignition, and vice versa.
 
 ## Installing Ignition Gazebo
 

@@ -6,7 +6,7 @@ sort: 4
 
 Rviz2 is a port of Rviz to ROS2. It provides a graphical interface for users to view their robot, sensor data, maps, and more. It is installed by default with ROS2 and requires a desktop version of Ubuntu to use.
 
-`turtlebot4_desktop` provides launch files and configurations for viewing the Turtlebot4 in Rviz2.
+`turtlebot4_desktop` provides launch files and configurations for viewing the TurtleBot 4 in Rviz2.
 
 ## View Model
 

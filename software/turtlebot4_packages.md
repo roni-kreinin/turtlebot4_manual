@@ -2,11 +2,11 @@
 sort: 2
 ---
 
-# Turtlebot4 Packages
+# TurtleBot 4 Packages
 
-The Turtlebot4 has 4 main repositories for software: [`turtlebot4`](https://github.com/turtlebot/turtlebot4), [`turtlebot4_robot`](https://github.com/turtlebot/turtlebot4_robot), [`turtlebot4_desktop`](https://github.com/turtlebot/turtlebot4_desktop), and [`turtlebot4_simulator`](https://github.com/turtlebot/turtlebot4_simulator). Each repository is also a [metapackage](http://wiki.ros.org/Metapackages) and contains one or more ROS2 packages.
+The TurtleBot 4 has 4 main repositories for software: [`turtlebot4`](https://github.com/turtlebot/turtlebot4), [`turtlebot4_robot`](https://github.com/turtlebot/turtlebot4_robot), [`turtlebot4_desktop`](https://github.com/turtlebot/turtlebot4_desktop), and [`turtlebot4_simulator`](https://github.com/turtlebot/turtlebot4_simulator). Each repository is also a [metapackage](http://wiki.ros.org/Metapackages) and contains one or more ROS2 packages.
 
-## Turtlebot4
+## TurtleBot 4
 
 The `turtlebot4` metapackage contains common packages that are used by both `turtlebot4_robot` and `turtlebot4_simulator`.
 
@@ -18,13 +18,13 @@ The description can be published with the `robot_state_publisher`.
 
 ### Messages
 
-The `turtlebot4_msgs` package contains the custom messages used on the Turtlebot4:
+The `turtlebot4_msgs` package contains the custom messages used on the TurtleBot 4:
 
 * [UserButton](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserButton.msg): User Button states.
 * [UserLed](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserLed.msg): User Led control.
 * [UserDisplay](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_msgs/msg/UserDisplay.msg): User Display data.
 
-The Turtlebot4 can also use all of the actions, messages, and services that the iRobot® Create3® platform supports:
+The TurtleBot 4 can also use all of the actions, messages, and services that the iRobot® Create® 3 platform supports:
 
 #### Actions
 * [AudioNoteSequence](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/action/AudioNoteSequence.action): Play a given set of notes from the speaker for a given number of iterations.
@@ -67,10 +67,10 @@ The Turtlebot4 can also use all of the actions, messages, and services that the 
 
 ### Navigation
 
-The `turtlebot4_navigation` packages contains launch and configuration files for using SLAM and navigation on the Turtlebot4.
+The `turtlebot4_navigation` packages contains launch and configuration files for using SLAM and navigation on the TurtleBot 4.
 
 Launch files:
-* [Nav Bringup](): Launches navigation. Allows for launch configurations to use SLAM, Nav2, and localization.
+* [Nav2 Bringup](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/nav2_bringup.launch.py): Launches navigation. Allows for launch configurations to use SLAM, Nav2, and localization.
 * [SLAM Sync](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/slam_sync.launch.py): Launches `slam_toolbox` with online synchronous mapping. Recommended for use on a PC.
 * [SLAM Async](https://github.com/turtlebot/turtlebot4/blob/galactic/turtlebot4_navigation/launch/slam_async.launch.py): Launches `slam_toolbox` with online asynchronous mapping. Recommended for use on the Raspberry Pi 4.
 
@@ -124,7 +124,7 @@ The `turtlebot4_node` package contains the source code for the [rclcpp](https://
 
 Publishers:
 - **/hmi/display**: *turtlebot4_msgs/msg/UserDisplay*
-    - description: The current information that is to be displayed (Standard model only).
+    - description: The current information that is to be displayed (TurtleBot 4 model only).
 - **/ip**: *std_msgs/msg/String*
     - description: The IP address of the Wi-Fi interface. 
 
@@ -132,15 +132,15 @@ Subscribers:
 - **/battery_state**: *sensor_msgs/msg/BatteryState*
     - description: Current battery state of the Create 3.
 - **/hmi/buttons**: *turtlebot4_msgs/msg/UserButton*
-    - description: Button states of the Turtlebot4 HMI (Standard model only).
+    - description: Button states of the TurtleBot 4 HMI (TurtleBot 4 model only).
 - **/hmi/display/message**: *std_msgs/msg/String*
-    - description: User topic to print custom message to display (Standard model only).
+    - description: User topic to print custom message to display (TurtleBot 4 model only).
 - **/hmi/led**: *turtlebot4_msgs/msg/UserLed*
-    - description: User topic to control User LED 1 and 2 (Standard model only).
+    - description: User topic to control User LED 1 and 2 (TurtleBot 4 model only).
 - **/interface_buttons**: *irobot_create_msgs/msg/InterfaceButtons*
     - description: Button states of Create 3 buttons.
 - **/joy**: *sensor_msgs/msg/Joy*
-    - description: Bluetooth controller button states (Standard model only).
+    - description: Bluetooth controller button states (TurtleBot 4 model only).
 - **/wheel_status**: *irobot_create_msgs/msg/WheelStatus*
     - description: Wheel status reported by Create 3.
 
@@ -171,7 +171,7 @@ Currently, the supported functions are:
 - **Power**: Call the */robot_power* service and power off the robot.
 - **EStop**: Call the */e_stop* service and toggle EStop state.
 
-The Turtlebot4 Standard also supports the following menu functions:
+The TurtleBot 4 also supports the following menu functions:
 
 - **Scroll Up**: Scroll menu up.
 - **Scroll Down**: Scroll menu down.
@@ -188,11 +188,11 @@ Parameters:
 - **wifi.interface**: The Wi-Fi interface being used by the computer. This is used to find the current IP address of the computer.
 - **menu.entries**: Set menu entries to be displayed. Each entry must be one of the support [functions](#functions).
 - **buttons**: Set the function of Create 3 and HMI buttons.
-- **controller**: Set the function of Turtlebot4 Controller buttons.
+- **controller**: Set the function of TurtleBot 4 Controller buttons.
 
 #### Buttons
 
-The `Buttons` class in `turtlebot4_node` provides functionality to all buttons on the robot. This includes the Create 3 buttons, HMI buttons, and Turtlebot4 Controller buttons.
+The `Buttons` class in `turtlebot4_node` provides functionality to all buttons on the robot. This includes the Create 3 buttons, HMI buttons, and TurtleBot 4 Controller buttons.
 The node receives button states from the */interface_buttons*, */hmi/buttons*, and */joy* topics.
 
 Each button can be configured to have either a single function when pressed, or two functions by using a short or long press. This is done through [configuration](#configuration).
@@ -231,9 +231,9 @@ controller:
 
 ##### Example
 
-Lets say we want the Turtlebot4 Standard to have the following button functions:
+Lets say we want the TurtleBot 4 to have the following button functions:
 - Make a short press of Create 3 button 1 toggle EStop.
-- Power off robot with 5 second press of Home on the Turtlebot4 Controller.
+- Power off robot with 5 second press of Home on the TurtleBot 4 Controller.
 - Short press of HMI button 1 performs Wall Follow Left, long press of 3 seconds performs Wall Follow Right.
 
 Create a new yaml file:
@@ -265,7 +265,7 @@ The buttons should now behave as described in `example.yaml`.
 
 #### LEDs
 
-The `Leds` class in `turtlebot4_node` controls the states of the HMI LEDs on the Turtlebot4 Standard. It is not used for the Turtlebot4 Lite.
+The `Leds` class in `turtlebot4_node` controls the states of the HMI LEDs on the TurtleBot 4. It is not used for the TurtleBot 4 Lite.
 
 There are 5 status LEDs which are controlled by the node: `POWER`, `MOTOR`, `COMMS`, `WIFI`, and `BATTERY`. There are also 2 user LEDs: `USER_1` and `USER_2` which are controlled by the user via the */hmi/led* topic. The `BATTERY` and `USER_2` LEDs consist of a red and green LED which allows them to be turned on as either green, red, or yellow (red + green). The rest are green only.
 
@@ -344,7 +344,7 @@ duty_cycle: 0.5" --once
 
 #### Display
 
-The `Display` class in `turtlebot4_node` controls the HMI display of the Turtlebot4 Standard. The physical display is a 128x64 OLED which is controlled over I2C with a SSD1306 driver.
+The `Display` class in `turtlebot4_node` controls the HMI display of the TurtleBot 4. The physical display is a 128x64 OLED which is controlled over I2C with a SSD1306 driver.
 
 The display has a header line which contains the IP address of the Wi-Fi interface specified in [configuration](#configuration), as well as the battery percentage received on the */battery_state* topic. The display also has 5 additional lines which are used for the menu by default. The menu entries are specified in [configuration](#configuration) and are a set of the available functions. The 5 menu lines can be overwritten by publishing to the */hmi/display/message* with a **String** message.
 
@@ -355,20 +355,20 @@ The menu can have any number of entries. If there are more than 5 entries, the u
 
 ##### Menu Control
 
-The Turtlebot4 display has a simple scrolling menu. There are 4 control functions for the menu: Scroll up, Scroll down, Select, and Back. 
+The TurtleBot 4 display has a simple scrolling menu. There are 4 control functions for the menu: Scroll up, Scroll down, Select, and Back. 
 
 * Scroll up and down allow the users to navigate through the menu entries and by default are mapped to user buttons 3 and 4 respectively. 
 * The select function will call the currently selected menu entry. This can trigger an action such as docking, a service such as EStop, or display a message such as the Help message. This function is mapped to user button 1 by default.
 * The back function allows the user to return back to the menu from a message screen. If the menu is already showing the menu entries, it will return to showing the first 5 menu entries and the first entry will be highlighted.
 
 <figure class="aligncenter">
-    <img src="media/menu_control.gif" alt="Turtlebot4 Menu Controls" style="width: 35%"/>
-    <figcaption>Turtlebot4 Menu Controls</figcaption>
+    <img src="media/menu_control.gif" alt="TurtleBot 4 Menu Controls" style="width: 35%"/>
+    <figcaption>TurtleBot 4 Menu Controls</figcaption>
 </figure>
 
-## Turtlebot4 Robot
+## TurtleBot 4 Robot
 
-The `turtlebot4_robot` metapackage contains packages that are used by the physical Turtlebot4 robot and are run on the robots Raspberry Pi.
+The `turtlebot4_robot` metapackage contains packages that are used by the physical TurtleBot 4 robot and are run on the robots Raspberry Pi.
 
 ### Base
 
@@ -376,17 +376,17 @@ The `turtlebot4_base` package contains the source code for the [rclcpp](https://
 
 Publishers:
 - **/hmi/buttons**: *turtlebot4_msgs/msg/UserButton*
-    - description: Button states of the Turtlebot4 HMI (Standard model only).
+    - description: Button states of the TurtleBot 4 HMI (TurtleBot 4 model only).
 
 Subscribers:
 - **/hmi/display**: *turtlebot4_msgs/msg/UserDisplay*
-    - description: The current information that is to be displayed (Standard model only).
+    - description: The current information that is to be displayed (TurtleBot 4 model only).
 - **/hmi/led/_led**: *std_msgs/msg/Int32*
     - description: Hidden topics indicating the state of each LED.
 
 #### GPIO Interface
 
-The Turtlebot4 uses *libgpiod* to interface with the GPIO lines of the Raspberry Pi. The `gpiochip0` device represents the 40-pin header of the Raspberry Pi and is used for reading and writing to these pins.
+The TurtleBot 4 uses *libgpiod* to interface with the GPIO lines of the Raspberry Pi. The `gpiochip0` device represents the 40-pin header of the Raspberry Pi and is used for reading and writing to these pins.
 
 #### I2C Interface
 
@@ -394,7 +394,7 @@ The linux I2C drivers are used to read and write data on the I2C buses of the Ra
 
 #### SSD1306
 
-The SSD1306 is a driver for OLED displays. It receives commands over a communication bus (I2C for the Turtlebot4) and controls how the physical display behaves. The Turtlebot4 uses a modified version of this [STM32 SSD1306 driver](https://github.com/afiskon/stm32-ssd1306) to write pixels, shapes and characters to the display.
+The SSD1306 is a driver for OLED displays. It receives commands over a communication bus (I2C for the TurtleBot 4) and controls how the physical display behaves. The TurtleBot 4 uses a modified version of this [STM32 SSD1306 driver](https://github.com/afiskon/stm32-ssd1306) to write pixels, shapes and characters to the display.
 
 #### Configuration
 
@@ -439,17 +439,17 @@ Launch files:
 * [Joy Teleop](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/joy_teleop.launch.py): Launches nodes to enable the bluetooth controller.
 * [OAKD](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/oakd.launch.py): Launches the OAK-D nodes.
 * [RPLIDAR](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/rplidar.launch.py): Launches the RPLIDAR node.
-* [Robot](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/robot.launch.py): Launches the Turtlebot4 nodes.
-* [Lite](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/lite.launch.py): Launches all necessary nodes for the Turtlebot4 Lite.
-* [Standard](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/standard.launch.py): Launches all necessary nodes for the Turtlebot4 Standard.
+* [Robot](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/robot.launch.py): Launches the TurtleBot 4 nodes.
+* [Lite](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/lite.launch.py): Launches all necessary nodes for the TurtleBot 4 Lite.
+* [Standard](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/launch/standard.launch.py): Launches all necessary nodes for the TurtleBot 4.
 
 Config files:
-* [Turtlebot4 Controller](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4_controller.config.yaml): Configurations for the Turtlebot4 controller.
-* [Turtlebot4](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4.yaml): Configurations for the `turtlebot4_node` and `turtlebot4_base_node`.
+* [TurtleBot 4 Controller](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4_controller.config.yaml): Configurations for the TurtleBot 4 controller.
+* [TurtleBot 4](https://github.com/turtlebot/turtlebot4_robot/blob/galactic/turtlebot4_bringup/config/turtlebot4.yaml): Configurations for the `turtlebot4_node` and `turtlebot4_base_node`.
 
 ### Diagnostics
 
-The `turtlebot4_diagnostics` packages contains the source code and launch files for the Turtlebot4 diagnostics updater.
+The `turtlebot4_diagnostics` packages contains the source code and launch files for the TurtleBot 4 diagnostics updater.
 
 Launch files:
 
@@ -486,7 +486,7 @@ ros2 launch turtlebot4_viz view_diagnostics.launch.py
 
 ### Tests
 
-The `turtlebot4_tests` packages contains the source code for the Turtlebot4 system test scripts. These scripts test basic functionality of the robot and are useful for troubleshooting issues.
+The `turtlebot4_tests` packages contains the source code for the TurtleBot 4 system test scripts. These scripts test basic functionality of the robot and are useful for troubleshooting issues.
 
 #### ROS Tests
 
@@ -496,9 +496,9 @@ Currently supported tests:
 
 - **Light Ring**: Test the Create 3 light ring
 - **Create 3 Button**: Test the Create 3 buttons
-- **User LED**: Test the HMI LEDs (Standard only)
-- **User Button**: Test the HMI buttons (Standard only)
-- **Display**: Test the HMI display (Standard only)
+- **User LED**: Test the HMI LEDs (TurtleBot 4 model only)
+- **User Button**: Test the HMI buttons (TurtleBot 4 model only)
+- **Display**: Test the HMI display (TurtleBot 4 model only)
 - **Dock**: Test the robots ability to undock and dock.
 
 Running the tests:
@@ -517,9 +517,9 @@ Enter the index of the test and hit enter to start the test. Some tests will run
 </figure>
 
 
-## Turtlebot4 Desktop
+## TurtleBot 4 Desktop
 
-The `turtlebot4_desktop` metapackage contains packages used for visualising and interfacing with the Turtlebot4 from a PC.
+The `turtlebot4_desktop` metapackage contains packages used for visualising and interfacing with the TurtleBot 4 from a PC.
 
 ### Visualisation
 
@@ -530,9 +530,9 @@ Launch files:
 * [View Model](https://github.com/turtlebot/turtlebot4_desktop/blob/galactic/turtlebot4_viz/launch/view_model.launch.py): Launches `rviz2`. Used to view the model and sensor data.
 * [View Robot](https://github.com/turtlebot/turtlebot4_desktop/blob/galactic/turtlebot4_viz/launch/view_robot.launch.py): Launches `rviz2`. Used to view the robot while navigating.
 
-## Turtlebot4 Simulator
+## TurtleBot 4 Simulator
 
-The `turtlebot4_simulator` metapackage contains packages used to simulate the Turtlebot4 in Ignition Gazebo.
+The `turtlebot4_simulator` metapackage contains packages used to simulate the TurtleBot 4 in Ignition Gazebo.
 
 ### Ignition Bringup
 
@@ -541,10 +541,10 @@ The `turtlebot4_ignition_bringup` package contains launch files and configuratio
 Launch files:
 * [Ignition](https://github.com/turtlebot/turtlebot4_simulator/blob/galactic/turtlebot4_ignition_bringup/launch/ignition.launch.py): Launches Ignition Gazebo and all required nodes to run the simulation.
 * [ROS Ignition Bridge](https://github.com/turtlebot/turtlebot4_simulator/blob/galactic/turtlebot4_ignition_bringup/launch/ros_ign_bridge.launch.py): Launches all of the required `ros_ign_bridge` nodes to bridge Ignition topics with ROS topics.
-* [Turtlebot4 Nodes](https://github.com/turtlebot/turtlebot4_simulator/blob/galactic/turtlebot4_ignition_bringup/launch/turtlebot4_nodes.launch.py): Launches the `turtlebot4_node` and `turtlebot4_ignition_hmi_node` required to control the HMI plugin and robot behaviour.
+* [TurtleBot 4 Nodes](https://github.com/turtlebot/turtlebot4_simulator/blob/galactic/turtlebot4_ignition_bringup/launch/turtlebot4_nodes.launch.py): Launches the `turtlebot4_node` and `turtlebot4_ignition_hmi_node` required to control the HMI plugin and robot behaviour.
 
 Ignition launch configuration options:
-- **model**: Which Turtlebot4 model to use.
+- **model**: Which TurtleBot 4 model to use.
     - options: *standard, lite*
     - default: *standard*
 - **rviz**: Whether to launch rviz.
@@ -575,15 +575,15 @@ ros2 launch turtlebot4_ignition_bringup ignition.launch.py slam:=sync nav2:=true
 
 ### Ignition GUI Plugins
 
-The `turtlebot4_ignition_gui_plugins` package contains the source code for the Turtlebot4 HMI GUI plugin.
+The `turtlebot4_ignition_gui_plugins` package contains the source code for the TurtleBot 4 HMI GUI plugin.
 
-The [Turtlebot4 HMI GUI plugin](https://github.com/turtlebot/turtlebot4_simulator/tree/galactic/turtlebot4_ignition_gui_plugins/Turtlebot4Hmi) is only used for the standard model. The lite model uses the [Create3 HMI GUI plugin](https://github.com/iRobotEducation/create3_sim/tree/main/irobot_create_ignition/irobot_create_ignition_plugins/Create3Hmi).
+The [TurtleBot 4 HMI GUI plugin](https://github.com/turtlebot/turtlebot4_simulator/tree/galactic/turtlebot4_ignition_gui_plugins/Turtlebot4Hmi) is only used for the standard model. The lite model uses the [Create3 HMI GUI plugin](https://github.com/iRobotEducation/create3_sim/tree/main/irobot_create_ignition/irobot_create_ignition_plugins/Create3Hmi).
 
 <figure class="aligncenter">
-    <img src="media/turtlebot4_hmi_gui.png" alt="Turtlebot4 HMI GUI" style="width: 35%"/>
-    <figcaption>Turtlebot4 HMI GUI plugin</figcaption>
+    <img src="media/turtlebot4_hmi_gui.png" alt="TurtleBot 4 HMI GUI" style="width: 35%"/>
+    <figcaption>TurtleBot 4 HMI GUI plugin</figcaption>
 </figure>
 
 ### Ignition Toolbox
 
-The `turtlebot4_ignition_toolbox` package contains the source code for the Turtlebot4 HMI node. The Turtlebot4 HMI node acts as a bridge between the `turtlebot4_node` and `ros_ign_bridge` to convert the custom [Turtlebot4 messages](#messages) into standard messages such as `Int32` and `String`.
+The `turtlebot4_ignition_toolbox` package contains the source code for the TurtleBot 4 HMI node. The TurtleBot 4 HMI node acts as a bridge between the `turtlebot4_node` and `ros_ign_bridge` to convert the custom [TurtleBot 4 messages](#messages) into standard messages such as `Int32` and `String`.

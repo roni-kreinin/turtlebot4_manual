@@ -1,8 +1,8 @@
 ---
-sort: 1
+sort: 2
 ---
 
-# Turtlebot4 Standard
+# TurtleBot 4 Lite
 
 Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 

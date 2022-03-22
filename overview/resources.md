@@ -22,15 +22,16 @@ sort: 2
   - SLAM
     - slam_toolbox: <https://github.com/SteveMacenski/slam_toolbox>
 
-### Turtlebot4
+### TurtleBot 4
   - Common package: <https://github.com/turtlebot/turtlebot4>
   - Desktop visualization package: <https://github.com/turtlebot/turtlebot4_desktop>
   - Simulator package: <https://github.com/turtlebot/turtlebot4_simulator>
   - Robot package: <https://github.com/turtlebot/turtlebot4_robot>
-  - Original SSD1306 driver: <https://github.com/afiskon/stm32-ssd1306>
+  - TurtleBot 4 images: <http://download.ros.org/downloads/turtlebot4/>
 
 ### iRobot Create® 3
   - Product details: <https://edu.irobot.com/what-we-offer/create3>
+  - Hardware overview: <https://iroboteducation.github.io/create3_docs/hw/overview/>
   - Create® 3 Simulator: <https://github.com/iRobotEducation/create3_sim>
   - irobot_create_msgs: <https://github.com/iRobotEducation/irobot_create_msgs>
 

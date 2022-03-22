@@ -8,7 +8,7 @@ sort: 3
 
 ### Connecting
 
-The RPLIDAR connects to the Turtlebot4 with a micro USB to USB-A cable. The sensor does not require high data throughput, so using a USB 2.0 port is sufficient. 
+The RPLIDAR connects to the TurtleBot 4 with a micro USB to USB-A cable. The sensor does not require high data throughput, so using a USB 2.0 port is sufficient. 
 
 Once connected, the RPLIDAR should register on the Raspberry PI as a USB device. If the [udev rules](https://github.com/turtlebot/turtlebot4-images/blob/galactic/turtlebot4_setup/udev/turtlebot4.rules) are installed, the RPLIDAR will appear as `/dev/RPLIDAR`. Otherwise it will be `/dev/ttyUSB0`.
 
@@ -22,7 +22,7 @@ If the device exists, the terminal will echo `/dev/RPLIDAR`.
 
 ### Installing
 
-The RPLIDAR drivers are installed by default on all Turtlebot4's. To manually install, run:
+The RPLIDAR drivers are installed by default on all TurtleBot 4's. To manually install, run:
 
 ```bash
 sudo apt install ros-galactic-rplidar-ros
@@ -45,11 +45,11 @@ The OAK-D cameras are connected to the Raspberry Pi with a USB-C to USB-A cable.
 
 ### Installing
 
-The OAK-D drivers are installed by default on all Turtlebot4's. To manuall install, follow the instructions on the DepthAI ROS [github](https://github.com/luxonis/depthai-ros/tree/main#getting-started).
+The OAK-D drivers are installed by default on all TurtleBot 4's. To manuall install, follow the instructions on the DepthAI ROS [github](https://github.com/luxonis/depthai-ros/tree/main#getting-started).
 
 ### Running
 
-The default node used by the Turtlebot4 can be launched:
+The default node used by the TurtleBot 4 can be launched:
 
 ```bash
 ros2 launch turtlebot4_bringup oakd.launch.py
@@ -74,6 +74,8 @@ ssh ubuntu@192.168.0.15 -X
 TODO
 
 ## Create3
+
+The Create 3 comes with several sensors for safety, object detection, and odometry. For more information on the physical location of the sensors, read the Create 3 [Hardware Overview](https://iroboteducation.github.io/create3_docs/hw/overview/).
 
 ### Cliff
 
