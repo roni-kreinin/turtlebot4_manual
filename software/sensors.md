@@ -45,7 +45,7 @@ The OAK-D cameras are connected to the Raspberry Pi with a USB-C to USB-A cable.
 
 ### Installing
 
-The OAK-D drivers are installed by default on all TurtleBot 4's. To manuall install, follow the instructions on the DepthAI ROS [github](https://github.com/luxonis/depthai-ros/tree/main#getting-started).
+The OAK-D drivers are installed by default on all TurtleBot 4's. To manually install, follow the instructions on the DepthAI ROS [github](https://github.com/luxonis/depthai-ros/tree/main#getting-started).
 
 ### Running
 

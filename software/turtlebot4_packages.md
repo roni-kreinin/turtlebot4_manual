@@ -63,7 +63,7 @@ The TurtleBot 4 can also use all of the actions, messages, and services that the
 * [ResetPose](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/srv/ResetPose.srv): Reset the robot pose estimate to the specified value.
 * [RobotPower](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/srv/RobotPower.srv): Power off robot.
 
- See [irobot_create_msgs](https://github.com/iRobotEducation/irobot_create_msgs) for more details.
+See [irobot_create_msgs](https://github.com/iRobotEducation/irobot_create_msgs) for more details.
 
 ### Navigation
 
@@ -381,7 +381,7 @@ Publishers:
 Subscribers:
 - **/hmi/display**: *turtlebot4_msgs/msg/UserDisplay*
     - description: The current information that is to be displayed (TurtleBot 4 model only).
-- **/hmi/led/_led**: *std_msgs/msg/Int32*
+- **/hmi/led/_<led>**: *std_msgs/msg/Int32*
     - description: Hidden topics indicating the state of each LED.
 
 #### GPIO Interface
