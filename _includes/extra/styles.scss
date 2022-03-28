@@ -2,7 +2,7 @@
     color: #fff;
     background: #000000;
 
-    background-image:url('./media/header_logo.png');
+    background-image:url('./media/turtlebot4_logo.png');
     background-size: 174px 60px;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -18,10 +18,91 @@
     top: 45px;
 }
 
+a img {
+    border: 0;
+    outline: none;
+}
+
 .header input{
     position: relative;
     top: 45px;
 }
+
+.header-bar-wrap {
+    background: #000000;
+    position: relative;
+    height: 140px;
+    width: 100%;
+}
+
+.header-logo {
+    background: #000000;
+    outline: #000000;
+    color:#000000;
+
+    float: left;
+    
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.cpr-logo{
+    background-image:url('./media/cpr_logo.png');
+    background-size: 195px 48px;
+    height: 78px;
+    width: 220px;
+}
+
+.osrf-logo{
+    background-image:url('./media/open_robotics_logo.png');
+    background-size: 110px 55px;
+    height: 85px;
+    width: 160px;
+}
+
+.irobot-logo{
+    background-image:url('./media/irobot_education.png');
+    background-size: 110px 41px;
+    height: 85px;
+    width: 160px;
+    background-position-y: 30px;
+}
+
+.luxonis-logo{
+    background-image:url('./media/luxonis.png');
+    background-size: 110px 30px;
+    height: 85px;
+    width: 160px; 
+}
+
+.github-logo{
+    background-image:url('./media/github_logo.png');
+    background-size: 50px 50px;
+    height: 80px;
+    width: 120px;
+}
+
+.shop-logo{
+    background-image:url('./media/shop.jpg');
+    background-size: 60px 51px;
+    height: 85px;
+    width: 120px;  
+}
+
+
 
 // Remove Home icon
 .fa-home::before{
@@ -39,9 +120,9 @@
 }
 
 // Change hyperlink text color to turtlebot green
-a {
-    color: #366d30;
-}
+// a {
+//     color: #366d30;
+// }
 
 // .markdown-body a {
 //     color: #366d30;
