@@ -12,7 +12,10 @@ Rviz2 is a port of Rviz to ROS2. It provides a graphical interface for users to 
 
 To inspect the model and sensor data, run `ros2 launch turtlebot4_viz view_model.launch.py`.
 
-TODO: Fix meshes in Rviz and add screenshots.
+<figure class="aligncenter">
+    <img src="media/view_model.png" alt="view_model" style="width: 70%"/>
+    <figcaption>Rviz2 launched with the View Model configuration</figcaption>
+</figure>
 
 ## View Robot
 

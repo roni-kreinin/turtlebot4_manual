@@ -10,6 +10,40 @@ The TurtleBot 4 has 4 main repositories for software: [`turtlebot4`](https://git
 
 The `turtlebot4` metapackage contains common packages that are used by both `turtlebot4_robot` and `turtlebot4_simulator`.
 
+### Installation
+
+The `turtlebot4` metapackage is automatically installed when either of `turtlebot4_robot` or `turtlebot4_simulator` is installed.
+
+#### Debian installation
+
+To manually install the debian metapackage, use apt:
+
+TODO
+
+#### Source installation
+
+To manually install this metapackage from source, clone the git repository:
+
+```bash
+cd ~/turtlebot4_ws/src
+git clone https://github.com/turtlebot/turtlebot4.git
+```
+
+Install dependencies:
+
+```bash
+cd ~/turtlebot4_ws
+vcs import src < src/turtlebot4/dependencies.repos
+rosdep install --from-path src -yi
+```
+
+Build the packages:
+
+```bash
+source /opt/ros/galactic/setup.bash
+colcon build --symlink-install
+```
+
 ### Description
 
 The `turtlebot4_description` package contains the URDF description of the robot and the mesh files for each component.
@@ -370,6 +404,40 @@ The TurtleBot 4 display has a simple scrolling menu. There are 4 control functio
 
 The `turtlebot4_robot` metapackage contains packages that are used by the physical TurtleBot 4 robot and are run on the robots Raspberry Pi.
 
+### Installation
+
+The `turtlebot4_robot` metapackage is pre-installed on the TurtleBot 4 Raspberry Pi image.
+
+#### Debian installation
+
+To manually install the debian metapackage, use apt:
+
+TODO
+
+#### Source installation
+
+To manually install this metapackage from source, clone the git repository:
+
+```bash
+cd ~/turtlebot4_ws/src
+git clone https://github.com/turtlebot/turtlebot4_robot.git
+```
+
+Install dependencies:
+
+```bash
+cd ~/turtlebot4_ws
+vcs import src < src/turtlebot4_robot/dependencies.repos
+rosdep install --from-path src -yi
+```
+
+Build the packages:
+
+```bash
+source /opt/ros/galactic/setup.bash
+colcon build --symlink-install
+```
+
 ### Base
 
 The `turtlebot4_base` package contains the source code for the [rclcpp](https://github.com/ros2/rclcpp) node `turtlebot4_base_node` which runs on the physical robot. This node interfaces with the GPIO lines of the Raspberry Pi which allows it to read the state of the buttons, as well as write to the LEDs and display.
@@ -521,6 +589,39 @@ Enter the index of the test and hit enter to start the test. Some tests will run
 
 The `turtlebot4_desktop` metapackage contains packages used for visualising and interfacing with the TurtleBot 4 from a PC.
 
+### Installation
+
+The `turtlebot4_desktop` metapackage can be installed on a PC running Ubuntu Desktop 20.04 with ROS2 Galactic.
+
+#### Debian installation
+
+To manually install the debian metapackage, use apt:
+
+TODO
+
+#### Source installation
+
+To manually install this metapackage from source, clone the git repository:
+
+```bash
+cd ~/turtlebot4_ws/src
+git clone https://github.com/turtlebot/turtlebot4_desktop.git
+```
+
+Install dependencies:
+
+```bash
+cd ~/turtlebot4_ws
+rosdep install --from-path src -yi
+```
+
+Build the packages:
+
+```bash
+source /opt/ros/galactic/setup.bash
+colcon build --symlink-install
+```
+
 ### Visualisation
 
 The `turtlebot4_viz` package contains launch files and configurations for viewing the robot in Rviz2, and viewing the diagnostics.
@@ -533,6 +634,60 @@ Launch files:
 ## TurtleBot 4 Simulator
 
 The `turtlebot4_simulator` metapackage contains packages used to simulate the TurtleBot 4 in Ignition Gazebo.
+
+### Installation
+
+The `turtlebot4_simulator` metapackage can be installed on a PC running Ubuntu Desktop 20.04 with ROS2 Galactic.
+
+#### Dev Tools
+
+```bash
+sudo apt install -y \
+python3-colcon-common-extensions \
+python3-rosdep \
+python3-vcstool
+```
+
+#### Ignition Edifice
+
+Ignition Edifice must be installed:
+
+```bash
+sudo apt-get update && sudo apt-get install wget
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update && sudo apt-get install ignition-edifice
+```
+
+#### Debian installation
+
+To manually install the debian metapackage, use apt:
+
+TODO
+
+#### Source installation
+
+To manually install this metapackage from source, clone the git repository:
+
+```bash
+cd ~/turtlebot4_ws/src
+git clone https://github.com/turtlebot/turtlebot4_simulator.git
+```
+
+Install dependencies:
+
+```bash
+cd ~/turtlebot4_ws
+vcs import src < src/turtlebot4_simulator/dependencies.repos
+rosdep install --from-path src -yi
+```
+
+Build the packages:
+
+```bash
+source /opt/ros/galactic/setup.bash
+colcon build --symlink-install
+```
 
 ### Ignition Bringup
 
