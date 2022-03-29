@@ -73,21 +73,21 @@ ssh ubuntu@192.168.0.15 -X
 
 TODO
 
-## Create3
+## Create® 3
 
-The Create 3 comes with several sensors for safety, object detection, and odometry. For more information on the physical location of the sensors, read the Create 3 [Hardware Overview](https://iroboteducation.github.io/create3_docs/hw/overview/). Hazards detected by the robot are published to the */hazard_detection* topic, although some sensors also have their own individual topics
+The Create® 3 comes with several sensors for safety, object detection, and odometry. For more information on the physical location of the sensors, read the Create® 3 [Hardware Overview](https://iroboteducation.github.io/create3_docs/hw/overview/). Hazards detected by the robot are published to the */hazard_detection* topic, although some sensors also have their own individual topics
 
 ### Cliff
 
-The Create 3 has 4 cliff sensors located on the front half of the robot. These sensors measure the distance from the robot to the ground, and prevent the robot from falling off of cliffs.
+The Create® 3 has 4 cliff sensors located on the front half of the robot. These sensors measure the distance from the robot to the ground, and prevent the robot from falling off of cliffs.
 
 ### Bumper
 
-The bumper is used by the Create 3 to detect objects or walls that the robot has run in to. It can trigger reflexes to recoil from the object, or use the information to follow the wall.
+The bumper is used by the Create® 3 to detect objects or walls that the robot has run in to. It can trigger reflexes to recoil from the object, or use the information to follow the wall.
 
 ### Wheeldrop
 
-The wheeldrop is the spring on which the Create 3 wheels sit. When the robot is lifted off of the ground, the spring is decompressed and the wheeldrop hazard is activated.
+The wheeldrop is the spring on which the Create® 3 wheels sit. When the robot is lifted off of the ground, the spring is decompressed and the wheeldrop hazard is activated.
 
 ### IR Proximity
 
@@ -95,7 +95,7 @@ The IR proxmity sensors are located on the front of the bumper and are used for 
 
 ### Slip and Stall
 
-Wheel slip and stall is also detected by the Create 3. The status can be viewed on the */slip_status* and */stall_status* topics.
+Wheel slip and stall is also detected by the Create® 3. The status can be viewed on the */slip_status* and */stall_status* topics.
 
 ### Kidnap
 

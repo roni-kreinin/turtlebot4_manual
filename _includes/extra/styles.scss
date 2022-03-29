@@ -32,19 +32,9 @@ a img {
     background: #000000;
     position: relative;
     height: 140px;
-    width: 100%;
-}
-
-.header-logo {
-    background: #000000;
-    outline: #000000;
-    color:#000000;
-
-    float: left;
-    
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
+    width: max-content;
+    min-width: 980px;
+    max-width: 100%;
 }
 
 .header-row {
@@ -59,33 +49,49 @@ a img {
     display: table;
 }
 
+.header-logo {
+    background: #000000;
+    outline: #000000;
+    color:#000000;
+
+    float: left;
+    
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.content{
+    min-width: 980px;
+}
+
 .cpr-logo{
     background-image:url('./media/cpr_logo.png');
     background-size: 195px 48px;
-    height: 78px;
-    width: 220px;
+    width: 240px;
+    height: 80px;
 }
 
 .osrf-logo{
     background-image:url('./media/open_robotics_logo.png');
-    background-size: 110px 55px;
-    height: 85px;
-    width: 160px;
+    background-size: 140px 59px;
+    height: 80px;
+    width: 180px;
 }
 
-.irobot-logo{
-    background-image:url('./media/irobot_education.png');
-    background-size: 110px 41px;
-    height: 85px;
-    width: 160px;
-    background-position-y: 30px;
+.ros-logo{
+    background-image:url('./media/ros_logo.png');
+    background-size: 110px 29px;
+    height: 80px;
+    width: 180px;
 }
 
-.luxonis-logo{
-    background-image:url('./media/luxonis.png');
-    background-size: 110px 30px;
-    height: 85px;
-    width: 160px; 
+.lessons-logo{
+    background-image:url('./media/lessons.png');
+    background-size: 60px 60px;
+    background-position-y: 10px;
+    height: 80px;
+    width: 120px; 
 }
 
 .github-logo{
@@ -99,7 +105,7 @@ a img {
     background-image:url('./media/shop.jpg');
     background-size: 60px 51px;
     height: 85px;
-    width: 120px;  
+    width: 140px;  
 }
 
 

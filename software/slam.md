@@ -6,7 +6,7 @@ sort: 5
 
 TODO: Add images from real robot
 
-[Simultaneous localization and mapping (SLAM)](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) is a method used in robotics for creating a map of the robots surroundings while keeping track of the robots position in that map. The TurtleBot 4 uses [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) to generate maps by combining odometry data from the Create 3 with laser scans from the RPLIDAR. `slam_toolbox` supports both synchronous and asynchronous SLAM nodes.
+[Simultaneous localization and mapping (SLAM)](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) is a method used in robotics for creating a map of the robots surroundings while keeping track of the robots position in that map. The TurtleBot 4 uses [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) to generate maps by combining odometry data from the Create® 3 with laser scans from the RPLIDAR. `slam_toolbox` supports both synchronous and asynchronous SLAM nodes.
 
 <figure class="aligncenter">
     <img src="media/depot.png" alt="Depot map" style="width: 70%"/>

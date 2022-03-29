@@ -29,7 +29,7 @@ sort: 2
   - Robot package: <https://github.com/turtlebot/turtlebot4_robot>
   - TurtleBot 4 images: <http://download.ros.org/downloads/turtlebot4/>
 
-### iRobot Create® 3
+### iRobot® Create® 3
   - Product details: <https://edu.irobot.com/what-we-offer/create3>
   - Hardware overview: <https://iroboteducation.github.io/create3_docs/hw/overview/>
   - Create® 3 Simulator: <https://github.com/iRobotEducation/create3_sim>

@@ -130,7 +130,7 @@ Publishers:
 
 Subscribers:
 - **/battery_state**: *sensor_msgs/msg/BatteryState*
-    - description: Current battery state of the Create 3.
+    - description: Current battery state of the Create® 3.
 - **/hmi/buttons**: *turtlebot4_msgs/msg/UserButton*
     - description: Button states of the TurtleBot 4 HMI (TurtleBot 4 model only).
 - **/hmi/display/message**: *std_msgs/msg/String*
@@ -138,11 +138,11 @@ Subscribers:
 - **/hmi/led**: *turtlebot4_msgs/msg/UserLed*
     - description: User topic to control User LED 1 and 2 (TurtleBot 4 model only).
 - **/interface_buttons**: *irobot_create_msgs/msg/InterfaceButtons*
-    - description: Button states of Create 3 buttons.
+    - description: Button states of Create® 3 buttons.
 - **/joy**: *sensor_msgs/msg/Joy*
     - description: Bluetooth controller button states (TurtleBot 4 model only).
 - **/wheel_status**: *irobot_create_msgs/msg/WheelStatus*
-    - description: Wheel status reported by Create 3.
+    - description: Wheel status reported by Create® 3.
 
 Service Clients:
 - **/e_stop**: *irobot_create_msgs/srv/EStop*
@@ -187,12 +187,12 @@ Parameters:
 
 - **wifi.interface**: The Wi-Fi interface being used by the computer. This is used to find the current IP address of the computer.
 - **menu.entries**: Set menu entries to be displayed. Each entry must be one of the support [functions](#functions).
-- **buttons**: Set the function of Create 3 and HMI buttons.
+- **buttons**: Set the function of Create® 3 and HMI buttons.
 - **controller**: Set the function of TurtleBot 4 Controller buttons.
 
 #### Buttons
 
-The `Buttons` class in `turtlebot4_node` provides functionality to all buttons on the robot. This includes the Create 3 buttons, HMI buttons, and TurtleBot 4 Controller buttons.
+The `Buttons` class in `turtlebot4_node` provides functionality to all buttons on the robot. This includes the Create® 3 buttons, HMI buttons, and TurtleBot 4 Controller buttons.
 The node receives button states from the */interface_buttons*, */hmi/buttons*, and */joy* topics.
 
 Each button can be configured to have either a single function when pressed, or two functions by using a short or long press. This is done through [configuration](#configuration).
@@ -232,7 +232,7 @@ controller:
 ##### Example
 
 Lets say we want the TurtleBot 4 to have the following button functions:
-- Make a short press of Create 3 button 1 toggle EStop.
+- Make a short press of Create® 3 button 1 toggle EStop.
 - Power off robot with 5 second press of Home on the TurtleBot 4 Controller.
 - Short press of HMI button 1 performs Wall Follow Left, long press of 3 seconds performs Wall Follow Right.
 
@@ -273,7 +273,7 @@ Status LEDs:
 - **POWER**: Always ON while `turtlebot4_node` is running.
 - **MOTOR**: ON when wheels are enabled, OFF when wheels are disabled.
     - Wheel status is reported on the */wheel_status* topic.
-- **COMMS**: ON when communication with Create 3 is active. OFF otherwise.
+- **COMMS**: ON when communication with Create® 3 is active. OFF otherwise.
     - Receiving data on the */battery_state* topic implies that communication is active.
 - **WIFI**: ON when an IP address can be found for the Wi-Fi interface specified in the [configuration](#configuration).
 - **BATTERY**: Colour and pattern will vary based on battery percentage.
@@ -494,8 +494,8 @@ The ROS tests use ROS topics and actions to test various system functionality. T
 
 Currently supported tests:
 
-- **Light Ring**: Test the Create 3 light ring
-- **Create 3 Button**: Test the Create 3 buttons
+- **Light Ring**: Test the Create® 3 light ring
+- **Create® 3 Button**: Test the Create® 3 buttons
 - **User LED**: Test the HMI LEDs (TurtleBot 4 model only)
 - **User Button**: Test the HMI buttons (TurtleBot 4 model only)
 - **Display**: Test the HMI display (TurtleBot 4 model only)
@@ -577,7 +577,7 @@ ros2 launch turtlebot4_ignition_bringup ignition.launch.py slam:=sync nav2:=true
 
 The `turtlebot4_ignition_gui_plugins` package contains the source code for the TurtleBot 4 HMI GUI plugin.
 
-The [TurtleBot 4 HMI GUI plugin](https://github.com/turtlebot/turtlebot4_simulator/tree/galactic/turtlebot4_ignition_gui_plugins/Turtlebot4Hmi) is only used for the standard model. The lite model uses the [Create3 HMI GUI plugin](https://github.com/iRobotEducation/create3_sim/tree/main/irobot_create_ignition/irobot_create_ignition_plugins/Create3Hmi).
+The [TurtleBot 4 HMI GUI plugin](https://github.com/turtlebot/turtlebot4_simulator/tree/galactic/turtlebot4_ignition_gui_plugins/Turtlebot4Hmi) is only used for the standard model. The lite model uses the [Create® 3 HMI GUI plugin](https://github.com/iRobotEducation/create3_sim/tree/main/irobot_create_ignition/irobot_create_ignition_plugins/Create3Hmi).
 
 <figure class="aligncenter">
     <img src="media/turtlebot4_hmi_gui.png" alt="TurtleBot 4 HMI GUI" style="width: 35%"/>

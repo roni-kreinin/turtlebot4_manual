@@ -15,7 +15,7 @@ There are 2 main computers that run software used by TurtleBot 4: the onboard Ra
 
 ## Create® 3
 
-The Create® 3 exposes ROS2 topics, actions, and services over both WiFi and the USB-C cable powering the Raspberry Pi. This gives users access to the battery state, sensor data, docking actions, and more. While the Create® 3 can be used with just the USB-C interface, in order to view the robot model on Rviz or run software such as SLAM or Nav2 from a user PC, the Create 3 will require a WiFi connection.
+The Create® 3 exposes ROS2 topics, actions, and services over both WiFi and the USB-C cable powering the Raspberry Pi. This gives users access to the battery state, sensor data, docking actions, and more. While the Create® 3 can be used with just the USB-C interface, in order to view the robot model on Rviz or run software such as SLAM or Nav2 from a user PC, the Create® 3 will require a WiFi connection.
 
 ## Raspberry Pi 4
 

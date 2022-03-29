@@ -40,14 +40,14 @@ The Regulatory domain is based on the country you live in. For a full list, clic
 ssh ubuntu@xxx.xxx.xxx.xxx
 ```
 
-## Create3 WiFi Setup
+## Create® 3 WiFi Setup
 
-- Press both Create3 button 1 and 2 simultaneously until light ring turns blue
-- The Create3 is now in AP mode. Connect to its WiFi 'Create-XXXX'
+- Press both Create® 3 button 1 and 2 simultaneously until light ring turns blue
+- The Create® 3 is now in AP mode. Connect to its WiFi 'Create-XXXX'
 - In a browser go to 192.168.10.1
 - Click connect and enter your WiFi ssid and password
 - Wait for it to connect to WiFi
-- On your PC, run `ros2 topic list` to ensure that the Create3 is publishing its topics.
+- On your PC, run `ros2 topic list` to ensure that the Create® 3 is publishing its topics.
 
 ## TurtleBot 4 Controller Setup
 

@@ -13,7 +13,7 @@ sort: 1
 
 The TurtleBot 4 is a ROS2-based mobile robot intended for education and research. The TurtleBot 4 is capable of mapping its surroundings and navigation autonomously, running AI models on its camera
 
-It uses a [Create 3](https://edu.irobot.com/what-we-offer/create3) as the base platform, and builds on it with the TurtleBot 4 shell and User Interface (UI) board. Inside the shell sits a Raspberry Pi 4B, which runs the TurtleBot 4 software.
+It uses a [Create® 3](https://edu.irobot.com/what-we-offer/create3) as the base platform, and builds on it with the TurtleBot 4 shell and User Interface (UI) board. Inside the shell sits a Raspberry Pi 4B, which runs the TurtleBot 4 software.
 
 <figure class="aligncenter">
     <img src="media/turtlebot4_rpi.png" alt="RPI4" style="width: 60%"/>
@@ -37,7 +37,7 @@ On top of the UI board sits a [RPLIDAR A1M8](#rplidar-a1m8) 360 degree lidar, an
     <figcaption>TurtleBot 4 Lite</figcaption>
 </figure>
 
-The TurtleBot 4 Lite is a barebones version of the TurtleBot 4. It has just the necessary components for navigation, mapping, and AI applications. The TurtleBot 4 has the same Raspberry Pi 4B, which sits in the cargo bay of the Create 3, as well as the same RPLIDAR A1M8. The camera on the TurtleBot 4 Lite is the [OAK-D-Lite](#oak-d-lite). Additional sensors and payloads can be attached to the Create 3 faceplate, or placed inside the cargo bay.
+The TurtleBot 4 Lite is a barebones version of the TurtleBot 4. It has just the necessary components for navigation, mapping, and AI applications. The TurtleBot 4 has the same Raspberry Pi 4B, which sits in the cargo bay of the Create® 3, as well as the same RPLIDAR A1M8. The camera on the TurtleBot 4 Lite is the [OAK-D-Lite](#oak-d-lite). Additional sensors and payloads can be attached to the Create® 3 faceplate, or placed inside the cargo bay.
 
 ## Hardware Specifications
 
@@ -45,7 +45,7 @@ The TurtleBot 4 Lite is a barebones version of the TurtleBot 4. It has just the 
 |:-------------------------|:-----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
 | Size (L x W x H)         | 342 x 339 x 192 mm                                                                                               | 342 x 339 x 351 mm                                                                                                  |
 | Weight                   | 3270 g                                                                                                           | 3945 g                                                                                                              |
-| Base platform            | iRobot Create® 3                                                                                                 | iRobot Create® 3                                                                                                    |
+| Base platform            | iRobot® Create® 3                                                                                                | iRobot® Create® 3                                                                                                   |
 | Wheels (Diameter)        | 72 mm                                                                                                            | 72 mm                                                                                                               |
 | Ground Clearance         | 4.5 mm                                                                                                           | 4.5mm                                                                                                               |
 | On-board Computer        | Raspberry Pi 4B 4GB                                                                                              | Raspberry Pi 4B 4GB                                                                                                 |
