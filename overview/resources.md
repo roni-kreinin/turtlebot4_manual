@@ -28,10 +28,12 @@ sort: 2
   - Simulator package: <https://github.com/turtlebot/turtlebot4_simulator>
   - Robot package: <https://github.com/turtlebot/turtlebot4_robot>
   - TurtleBot 4 images: <http://download.ros.org/downloads/turtlebot4/>
+  - TurtleBot 4 hardware: <https://github.com/turtlebot/turtlebot4-hardware>
 
 ### iRobot® Create® 3
   - Product details: <https://edu.irobot.com/what-we-offer/create3>
   - Hardware overview: <https://iroboteducation.github.io/create3_docs/hw/overview/>
+  - Electrical overview: <https://iroboteducation.github.io/create3_docs/hw/electrical/>
   - Create® 3 Simulator: <https://github.com/iRobotEducation/create3_sim>
   - irobot_create_msgs: <https://github.com/iRobotEducation/irobot_create_msgs>
 

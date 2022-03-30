@@ -1,96 +1,530 @@
 ---
-sort: 1
+sort: 3
 ---
 
-# PCBA
+# User Interface PCBA
 
-The TurtleBot 4 comes with an additional UI board that expands on the Raspberry Pi 4 functionality to give the user ease of control over the Create® 3 robot and Raspberry Pi and to act as an expansion board for addons, sensors, gadgets the user might have in mind to utilize.
+```note
+The User Interface PCBA is only available on the TurtleBot 4 and NOT the TurtleBot 4 Lite.
+```
+
+## Overview
+
+The TurtleBot 4 comes with an additional User Interface board that expands on the Raspberry Pi 4 functionality to give the user ease of control over the Create 3 robot and Raspberry Pi and to act as an expansion board for addons, sensors, gadgets the user might have in mind to utilize.
 
 <figure class="aligncenter">
     <img src="media/PCB.png" alt="TurtleBot 4 UI Board" style="width: 90%"/>
-    <figcaption>TurtleBot 4 User Interface Board</figcaption>
+    <figcaption>TurtleBot 4 User Interface PCBA</figcaption>
 </figure>
 
-It houses;
+## User I/O
 
-| # | Connector                 | Availability          |
-|:--|:--------------------------|:----------------------|
-| 4 | USB-C Ports               | Available to the user |
-| 1 | User I/O expansion header | Available to the user |
-| 2 | Fan Connectors            | Available to the user |
-| 2 | User Power Connectors     | Available to the user |
+The TurtleBot 4 has a 2x20 pin internal connector connecting it to the Raspberry Pi via a flex cable, and another 2x12 pin connector allowing the user to access the remaining GPIOs and a set of 5, and 3.3V power pins coming from the Raspberry Pi.
 
-## Available I/O
+The IO interface between the 2x20 connector and 2x12 connector and the available GPIOs to the user are shown in Table 1, and 2.
+The GPIO numbers are a direct match to the Raspberry Pi 4 [GPIO](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-datasheet.pdf).
 
-The standard Turtlebot 4 has a 2X20 pin internal connector, connecting it to the RPi via a flex cable, and another 2X12 pin connector allowing the user to access the remaining GPIOs and a set of 5V, and 3.3V power coming from the RPi.
-
-The IO interface between the 2X20 connector and 2X12 connector and the available GPIOs to the user are shown in Table 1a, and 1b.
-
-Table 1a:
-
-| GPIO # | Function      | Pin # | Pin # | Function      | GPIO # |
-|:-------|:--------------|:------|:------|:--------------|:-------|
-|        | 3V3_RPi       | 1     | 2     | 5V_RPi        |        |
-| GPIO2  | USER_PORT     | 3     | 4     | 5V_RPi        |        |
-| GPIO3  | USER_PORT     | 5     | 6     | GND           |        |
-| GPIO4  | SDA           | 7     | 8     | USER_PORT     | GPIO14 |
-|        | GND           | 9     | 10    | USER_PORT     | GPIO15 |
-| GPIO17 | PWR_LED       | 11    | 12    | MTR_LED       | GPIO18 |
-| GPIO27 | COMM_LED      | 13    | 14    | GND           |        |
-| GPIO22 | BATT_GRN_LED  | 15    | 16    | BATT_LED      | GPIO23 |
-|        | 3V3_RPi       | 17    | 18    | WIFI_LED      | GPIO24 |
-| GPIO10 | USER_PORT     | 19    | 20    | GND           |        |
-| GPIO9  | USER_PORT     | 21    | 22    | USER1_GRN_LED | GPIO25 |
-| GPIO11 | USER_PORT     | 23    | 24    | USER_PORT     | GPIO8  |
-|        | GND           | 25    | 26    | USER_PORT     | GPIO7  |
-| GPIO0  | EEPROM_SD     | 27    | 28    | EEPROM_SC     | GPIO1  |
-| GPIO5  | SCL           | 29    | 30    | GND           |        |
-| GPIO6  | USER2_GRN_LED | 31    | 32    | USER_PORT     | GPIO12 |
-| GPIO13 | DISPLAY-RST   | 33    | 34    | GND           |        |
-| GPIO19 | USER_SW1      | 35    | 36    | USER_SW2      | GPIO16 |
-| GPIO26 | USER_SW3      | 37    | 38    | USER_SW4      | GPIO20 |
-|        | GND           | 39    | 40    | USER2_RED_LED | GPIO21 |
+<figure>
+    <figcaption style="text-align:center;">Table 1: 2x20 RPi Connector Pinout</figcaption>
+    <table class="center-table">
+        <thead>
+            <tr>
+                <th>GPIO #</th>
+                <th>Function</th>
+                <th>Pin #</th>
+                <th>Pin #</th>
+                <th>Function</th>
+                <th>GPIO #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>3V3_RPi</td>
+                <td>1</td>
+                <td>2</td>
+                <td>5V_RPi</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO2</td>
+                <td>USER_PORT</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5V_RPi</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO3</td>
+                <td>USER_PORT</td>
+                <td>5</td>
+                <td>6</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO4</td>
+                <td>SDA</td>
+                <td>7</td>
+                <td>8</td>
+                <td>USER_PORT</td>
+                <td>GPIO14</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>9</td>
+                <td>10</td>
+                <td>USER_PORT</td>
+                <td>GPIO15</td>
+            </tr>
+            <tr>
+                <td>GPIO17</td>
+                <td>PWR_LED</td>
+                <td>11</td>
+                <td>12</td>
+                <td>MTR_LED</td>
+                <td>GPIO18</td>
+            </tr>
+            <tr>
+                <td>GPIO27</td>
+                <td>COMM_LED</td>
+                <td>13</td>
+                <td>14</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO22</td>
+                <td>BATT_GRN_LED</td>
+                <td>15</td>
+                <td>16</td>
+                <td>BATT_RED_LED</td>
+                <td>GPIO23</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>3V3_RPi</td>
+                <td>17</td>
+                <td>18</td>
+                <td>WIFI_LED</td>
+                <td>GPIO24</td>
+            </tr>
+            <tr>
+                <td>GPIO10</td>
+                <td>USER_PORT</td>
+                <td>19</td>
+                <td>20</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO9</td>
+                <td>USER_PORT</td>
+                <td>21</td>
+                <td>22</td>
+                <td>USER1_GRN_LED</td>
+                <td>GPIO25</td>
+            </tr>
+            <tr>
+                <td>GPIO11</td>
+                <td>USER_PORT</td>
+                <td>23</td>
+                <td>24</td>
+                <td>USER_PORT</td>
+                <td>GPIO8</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>25</td>
+                <td>26</td>
+                <td>USER_PORT</td>
+                <td>GPIO7</td>
+            </tr>
+            <tr>
+                <td>GPIO0</td>
+                <td>EEPROM_SD</td>
+                <td>27</td>
+                <td>28</td>
+                <td>EEPROM_SC</td>
+                <td>GPIO1</td>
+            </tr>
+            <tr>
+                <td>GPIO5</td>
+                <td>SCL</td>
+                <td>29</td>
+                <td>30</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO6</td>
+                <td>USER2_GRN_LED</td>
+                <td>31</td>
+                <td>32</td>
+                <td>USER_PORT</td>
+                <td>GPIO12</td>
+            </tr>
+            <tr>
+                <td>GPIO13</td>
+                <td>DISPLAY-RST</td>
+                <td>33</td>
+                <td>34</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO19</td>
+                <td>USER_SW1</td>
+                <td>35</td>
+                <td>36</td>
+                <td>USER_SW2</td>
+                <td>GPIO16</td>
+            </tr>
+            <tr>
+                <td>GPIO26</td>
+                <td>USER_SW3</td>
+                <td>37</td>
+                <td>38</td>
+                <td>USER_SW4</td>
+                <td>GPIO20</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>39</td>
+                <td>40</td>
+                <td>USER2_RED_LED</td>
+                <td>GPIO21</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
 
 ```note
 ALL USER_PORTs are routed to the 2X12 Auxiliary connectors
 ```
 
-Table 1b:
+<figure>
+    <figcaption style="text-align:center;">Table 2: 2x12 User I/O Pinout</figcaption>
+    <table class="center-table">
+        <thead>
+            <tr>
+                <th>GPIO #</th>
+                <th>Function</th>
+                <th>Pin #</th>
+                <th>Pin #</th>
+                <th>Function</th>
+                <th>GPIO #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>3V3_RPi</td>
+                <td>1</td>
+                <td>2</td>
+                <td>5V_RPi</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO2</td>
+                <td>USER_PORT</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5V_RPi</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO3</td>
+                <td>USER_PORT</td>
+                <td>5</td>
+                <td>6</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>7</td>
+                <td>8</td>
+                <td>USER_PORT</td>
+                <td>GPIO14</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>3V3_RPi</td>
+                <td>9</td>
+                <td>10</td>
+                <td>USER_PORT</td>
+                <td>GPIO15</td>
+            </tr>
+            <tr>
+                <td>GPIO0</td>
+                <td>EEPROM_SD</td>
+                <td>11</td>
+                <td>12</td>
+                <td>USER_PORT</td>
+                <td>GPIO1</td>
+            </tr>
+            <tr>
+                <td>GPIO10</td>
+                <td>USER_PORT</td>
+                <td>13</td>
+                <td>14</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO9</td>
+                <td>USER_PORT</td>
+                <td>15</td>
+                <td>16</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GPIO11</td>
+                <td>USER_PORT</td>
+                <td>17</td>
+                <td>18</td>
+                <td>USER_PORT</td>
+                <td>GPIO8</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>19</td>
+                <td>20</td>
+                <td>USER_PORT</td>
+                <td>GPIO7</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>21</td>
+                <td>22</td>
+                <td>USER_PORT</td>
+                <td>GPIO12</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>GND</td>
+                <td>23</td>
+                <td>24</td>
+                <td>GND</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
 
-| GPIO # | Function  | Pin # | Pin # | Function  | GPIO # |
-|:-------|:----------|:------|:------|:----------|:-------|
-|        | 3V3_RPi   | 1     | 2     | 5V_RPi    |        |
-| GPIO2  | USER_PORT | 3     | 4     | 5V_RPi    |        |
-| GPIO3  | USER_PORT | 5     | 6     | GND       |        |
-|        | GND       | 7     | 8     | USER_PORT | GPIO14 |
-|        | 3V3_RPi   | 9     | 10    | USER_PORT | GPIO15 |
-| GPIO0  | EEPROM_SD | 11    | 12    | USER_PORT | GPIO1  |
-| GPIO10 | USER_PORT | 13    | 14    | GND       |        |
-| GPIO9  | USER_PORT | 15    | 16    | GND       |        |
-| GPIO11 | USER_PORT | 17    | 18    | USER_PORT | GPIO8  |
-|        | GND       | 19    | 20    | USER_PORT | GPIO7  |
-|        | GND       | 21    | 22    | USER_PORT | GPIO12 |
-|        | GND       | 23    | 24    | GND       |        |
+## User Power
 
-In addition to these GPIO ports, the User has two additional power ports available supplying 3.3V, 5V, 12V, VBATT (14.4V), and two grounds each. 
+In addition to these GPIO ports, the user has two additional power ports available supplying 3.3V, 5V, 12V, VBATT (14.4V), and two grounds each. 
 
 <figure class="aligncenter">
     <img src="media/power_connectors.png" alt="TurtleBot 4 UI Power Connectors" style="width: 80%"/>
     <figcaption>TurtleBot 4 Additional Power Ports</figcaption>
 </figure>
 
-The two connectors are both 6-Pin Molex PicoBlade P/N 0532610671. The cable assembly needed to use these connectors are P/N 0151340602.
+The pinout and power ratings can be found in Table 3.
 
-<figure class="aligncenter">
-    <img src="media/connector.png" alt="Power Connector" style="width: 20%"/>
-    <figcaption>Power Connector</figcaption>
+<figure>
+    <figcaption style="text-align:center;">Table 3: User Power Port Pinout</figcaption>
+    <table class="center-table">
+        <thead>
+            <tr>
+                <th>Pinout</th>
+                <th>Source</th>
+                <th>Max current output (mA)</th>
+                <th>Fuse Hold at (mA)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>VBAT</td>
+                <td>300</td>
+                <td>350</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>12V</td>
+                <td>300</td>
+                <td>350</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>GND</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5V</td>
+                <td>500</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>3V3</td>
+                <td>250</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>GND</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </figure>
 
-| Pin # | Voltage  |
-|:------|:---------|
-| 1     | VBAT     |
-| 2     | 12V      |
-| 3     | GND      |
-| 4     | 5V       |
-| 5     | 3V3      |
-| 6     | GND      |
+### Molex Picoblade 6-Pin cable assembly
+
+The two connectors are both [6-Pin Molex PicoBlade P/N 0532610671](https://www.digikey.ca/en/products/detail/molex/0532610671/699098). The cable assembly needed to use these connectors are [P/N 0151340602](https://www.digikey.ca/en/products/detail/molex/0151340602/6198156?s=N4IgTCBcDaIAwEYCsCDMAWOA2OEC6AvkA). 
+
+<figure class="aligncenter">
+    <img src="media/molex_connector.png" alt="Molex PicoBlade: 0532610671" style="width: 20%; margin-right: 10%"/>
+    <img src="media/molex_cable.png" alt="Molex PicoBlade: 0151340602" style="width: 20%"/>
+    <figcaption>Molex PicoBlade: Connector 0532610671 (left) and Cable 0151340602 (right)</figcaption>
+</figure>
+
+## User USB-C Ports
+
+The are 4 USB-C ports that go through an integrated hub on the User Interface board and connect to the Raspberry Pi through a single USB 3.0 cable. The current available to all 4 ports is 3A. Additionally, each individual port is current limited to 3A. In other words, each port is capable of supplying 3A if the others aren’t in use, or the available 3A is shared amongst ports that are in use. The bandwidth for communication is split among 4 dynamically depending on how many of the ports are communication at once.
+
+## Power Budget
+
+Table 4 provides a rough estimation of maximum power consumption of the User Interface board.
+
+<figure>
+    <figcaption style="text-align:center;">Table 4: TurtleBot 4 UI Board Power Budget</figcaption>
+    <table id="powerBudget" class="center-table">
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Operating Voltage (V)</th>
+                <th>Max current draw (A)</th>
+                <th>Power (W)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4 USB-C ports</td>
+                <td>5</td>
+                <td>3</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>USB Hub Controller</td>
+                <td>1.2</td>
+                <td>1.3</td>
+                <td>1.8</td>
+            </tr>
+            <tr>
+                <td>OLED Display</td>
+                <td>12</td>
+                <td>0.031</td>
+                <td>0.372</td>
+            </tr>
+            <tr>
+                <td rowspan=4>USER PWR Ports</td>
+                <td>14.4</td>
+                <td>0.3</td>
+                <td>4.32</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>0.3</td>
+                <td>3.6</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>0.5</td>
+                <td>2.5</td>
+            </tr>
+            <tr>
+                <td>3.3</td>
+                <td>0.25</td>
+                <td>0.825</td>
+            </tr>
+            <tr>
+                <td>OAK-D-Lite</td>
+                <td>5</td>
+                <td>1.2</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>OAK-D-Pro</td>
+                <td>5</td>
+                <td>1.5</td>
+                <td>7.5</td>
+            </tr>
+            <tr>
+                <td>RPLIDAR A1M8</td>
+                <td>5</td>
+                <td>0.6</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Blower Fan (each)</td>
+                <td>5</td>
+                <td>0.25</td>
+                <td>1.25</td>
+            </tr>
+            <tr>
+                <td>Axial Fan (each)</td>
+                <td>5</td>
+                <td>0.15</td>
+                <td>0.75</td>
+            </tr>
+            <tr>
+                <td>Raspberry Pi 4B</td>
+                <td>5</td>
+                <td>0.8</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td rowspan=2>Total Power (max)</td>
+                <td colspan=2>TurtleBot 4</td>
+                <td>54</td>
+            </tr>
+            <tr>
+                <td colspan=2>TurtleBot 4 Lite</td>
+                <td>13</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+```note
+Not accounting for inefficiencies of components, and power loss. Assuming 
+USB hub speed operating with all ports at SuperSpeed, and OLED is set to max 
+brightness
+```
+
+<!-- <figure>
+    <figcaption style="text-align:center;">Table 5: TurtleBot 4 Max Power Consumption</figcaption>
+    <table class="center-table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Max estimated power consumption (W)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>TurtleBot 4</td>
+                <td>54</td>
+            </tr>
+            <tr>
+                <td>TurtleBot 4 Lite</td>
+                <td>13</td>
+            </tr>
+        </tbody>
+    </table>
+</figure> -->

@@ -11,9 +11,9 @@ sort: 1
     <figcaption>TurtleBot 4</figcaption>
 </figure>
 
-The TurtleBot 4 is a ROS2-based mobile robot intended for education and research. The TurtleBot 4 is capable of mapping its surroundings and navigation autonomously, running AI models on its camera
+The TurtleBot 4 is a ROS2-based mobile robot intended for education and research. The TurtleBot 4 is capable of mapping its surroundings, navigation autonomously, running AI models on its camera, and more.
 
-It uses a [Create® 3](https://edu.irobot.com/what-we-offer/create3) as the base platform, and builds on it with the TurtleBot 4 shell and User Interface (UI) board. Inside the shell sits a Raspberry Pi 4B, which runs the TurtleBot 4 software.
+It uses a [Create® 3](https://edu.irobot.com/what-we-offer/create3) as the base platform, and builds on it with the TurtleBot 4 shell and User Interface (UI) board. Inside the shell sits a Raspberry Pi 4B which runs the TurtleBot 4 software.
 
 <figure class="aligncenter">
     <img src="media/turtlebot4_rpi.png" alt="RPI4" style="width: 60%"/>
@@ -21,7 +21,7 @@ It uses a [Create® 3](https://edu.irobot.com/what-we-offer/create3) as the base
 </figure>
 
 
-The UI Board offers status and user LEDs, user buttons, and a 128x64 user display. Additionally, it exposes 4 USB type C ports, as well as additional power ports, and some Raspberry Pi pins for the user.
+The UI Board offers status and user LEDs, user buttons, and a 128x64 user display. Additionally, it exposes 4 USB 3.0 (type C) ports, as well as additional power ports and some Raspberry Pi pins for the user.
 
 <figure class="aligncenter">
     <img src="media/turtlebot4_ui.png" alt="UI Board" style="width: 60%"/>
@@ -41,29 +41,160 @@ The TurtleBot 4 Lite is a barebones version of the TurtleBot 4. It has just the 
 
 ## Hardware Specifications
 
-| Feature                  | TurtleBot 4 Lite <img src="media/lite_render.png" alt="Lite Render" width="150" style="vertical-align:middle;"/> | TurtleBot 4 <img src="media/standard_render.png" alt="Standard Render" width="200" style="vertical-align:middle;"/> |
-|:-------------------------|:-----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| Size (L x W x H)         | 342 x 339 x 192 mm                                                                                               | 342 x 339 x 351 mm                                                                                                  |
-| Weight                   | 3270 g                                                                                                           | 3945 g                                                                                                              |
-| Base platform            | iRobot® Create® 3                                                                                                | iRobot® Create® 3                                                                                                   |
-| Wheels (Diameter)        | 72 mm                                                                                                            | 72 mm                                                                                                               |
-| Ground Clearance         | 4.5 mm                                                                                                           | 4.5mm                                                                                                               |
-| On-board Computer        | Raspberry Pi 4B 4GB                                                                                              | Raspberry Pi 4B 4GB                                                                                                 |
-| Maximum linear velocity  | 0.31 m/s in safe mode, 0.46 m/s without safe mode                                                                | 0.31 m/s in safe mode, 0.46 m/s without safe mode                                                                   |
-| Maximum angular velocity | 1.90 rad/s                                                                                                       | 1.90 rad/s                                                                                                          |
-| Maximum payload          | 9 kg                                                                                                             | 9 kg                                                                                                                |
-| Operation time           | 2h 30m - 4h depending on load                                                                                    | 2h 30m - 4h depending on load                                                                                       |
-| Charging time            | 2h 30m                                                                                                           | 2h 30m                                                                                                              |
-| Bluetooth Controller     | -                                                                                                                | TurtleBot 4 Controller                                                                                              |
-| Lidar                    | RPLIDAR A1M8                                                                                                     | RPLIDAR A1M8                                                                                                        |
-| Camera                   | OAK-D-Lite                                                                                                       | OAK-D-Pro                                                                                                           |
-| User Power               | VBAT @ 1.9A <br/> 5V @ Low current <br/> 3.3v @ Low current                                                      | VBAT @ 300 mA <br/> 12V @ TBD mA <br/> 5V @ 500 mA <br/> 3.3v @ 250 mA                                              |
-| Expansion ports          | USB 2.0 (Type A) x2 <br/> USB 3.0 (Type A) x2                                                                    | USB 2.0 (Type A) x2 <br/> USB 3.0 (Type A) x1 <br/> USB 3.0 (Type C) x4                                             |
-| Programmable LEDs        | Create® 3 Lightring                                                                                              | Create® 3 Lightring <br/> User LED x2                                                                               |
-| Status LEDs              | -                                                                                                                | Power LED <br/> Motors LED <br/> WiFi LED <br/> Comms LED <br/> Battery LED                                         |
-| Buttons and Switches     | Create® 3 User buttons x2 <br/> Create® 3 Power Button x1                                                        | Create® 3 User buttons x2 <br/> Create® 3 Power Button x1 <br/> User Buttons x4                                     |
-| Battery                  | 26 Wh Lithium Ion (14.4V nominal)                                                                                | 26 Wh Lithium Ion (14.4V nominal)                                                                                   |
-| Dock                     | Included                                                                                                         | Included                                                                                                            |
+<table class="center-table">
+    <thead>
+        <tr>
+            <th>Feature</th>
+            <th>
+                TurtleBot 4 Lite
+                <img src="media/lite_render.png" alt="Lite Render" width="150" style="vertical-align:middle;"/>
+            </th>
+            <th>
+                TurtleBot 4
+                <img src="media/standard_render.png" alt="Standard Render" width="200" style="vertical-align:middle;"/>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Size (L x W x H)</td>
+            <td>342 x 339 x 192 mm</td>
+            <td>342 x 339 x 351 mm</td>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <td>3270 g</td>
+            <td>3945 g</td>
+        </tr>
+        <tr>
+            <td>Base platform</td>
+            <td>iRobot® Create® 3</td>
+            <td>iRobot® Create® 3</td>
+        </tr>
+        <tr>
+            <td>Wheels (Diameter)</td>
+            <td>72 mm</td>
+            <td>72 mm</td>
+        </tr>
+        <tr>
+            <td>Ground Clearance</td>
+            <td>4.5 mm</td>
+            <td>4.5 mm</td>
+        </tr>
+        <tr>
+            <td>On-board Computer</td>
+            <td>Raspberry Pi 4B 4GB</td>
+            <td>Raspberry Pi 4B 4GB</td>
+        </tr>
+        <tr>
+            <td>Maximum linear velocity	</td>
+            <td>0.31 m/s in safe mode, 0.46 m/s without safe mode</td>
+            <td>0.31 m/s in safe mode, 0.46 m/s without safe mode</td>
+        </tr>
+        <tr>
+            <td>Maximum angular velocity</td>
+            <td>1.90 rad/s</td>
+            <td>1.90 rad/s</td>
+        </tr>
+        <tr>
+            <td>Maximum payload	</td>
+            <td>9 kg</td>
+            <td>9 kg</td>
+        </tr>
+        <tr>
+            <td>Operation time	</td>
+            <td>2h 30m - 4h depending on load</td>
+            <td>2h 30m - 4h depending on load</td>
+        </tr>
+        <tr>
+            <td>Charging time</td>
+            <td>2h 30m</td>
+            <td>2h 30m</td>
+        </tr>
+        <tr>
+            <td>Bluetooth Controller</td>
+            <td>Not Included</td>
+            <td>TurtleBot 4 Controller</td>
+        </tr>
+        <tr>
+            <td>Lidar</td>
+            <td>RPLIDAR A1M8</td>
+            <td>RPLIDAR A1M8</td>
+        </tr>
+        <tr>
+            <td>Camera</td>
+            <td>OAK-D-Lite</td>
+            <td>OAK-D-Pro</td>
+        </tr>
+        <tr>
+            <td>User Power</td>
+            <td>
+                VBAT @1.9A <br/>
+                5V @ Low current <br/>
+                3.3V @ Low current
+            </td>
+            <td>
+                VBAT @ 300 mA <br/>
+                12V @ 300 mA <br/>
+                5V @ 500 mA <br/>
+                3.3v @ 250 mA
+            </td>
+        </tr>
+        <tr>
+            <td>USB Expansion</td>
+            <td>
+                USB 2.0 (Type A) x2 <br/>
+                USB 3.0 (Type A) x2
+            </td>
+            <td>
+                USB 2.0 (Type A) x2 <br/>
+                USB 3.0 (Type A) x1 <br/>
+                USB 3.0 (Type C) x4
+            </td>
+        </tr>
+        <tr>
+            <td>Programmable LEDs</td>
+            <td>Create® 3 Lightring</td>
+            <td>
+                Create® 3 Lightring <br/>
+                User LED x2
+            </td>
+        </tr>
+        <tr>
+            <td>Status LEDs</td>
+            <td>-</td>
+            <td>
+                Power LED <br/>
+                Motors LED <br/>
+                WiFi LED <br/>
+                Comms LED <br/>
+                Battery LED
+            </td>
+        </tr>
+        <tr>
+            <td>Buttons and Switches</td>
+            <td>
+                Create® 3 User buttons x2 <br/>
+                Create® 3 Power Button x1
+            </td>
+            <td>
+                Create® 3 User buttons x2 <br/>
+                Create® 3 Power Button x1 <br/>
+                User Buttons x4
+            </td>
+        </tr>
+        <tr>
+            <td>Battery</td>
+            <td>26 Wh Lithium Ion (14.4V nominal)</td>
+            <td>26 Wh Lithium Ion (14.4V nominal)</td>
+        </tr>
+        <tr>
+            <td>Charging Dock</td>
+            <td>Included</td>
+            <td>Included</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Sensors
 

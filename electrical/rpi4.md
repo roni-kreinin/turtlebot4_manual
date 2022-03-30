@@ -1,11 +1,10 @@
 ---
-sort: 3
+sort: 2
 ---
 
 # Raspberry Pi 4B
 
-Connection with RPi is through the large 40 pin connector and through a short USB-B cable. The USB-B type cable enables communication to 4 USB-C ports on the UI board.  
-The ribbon cable connecting the two stretches out from the Left of the board as seen here and bends upwards to connect to the 40-pin on the UI board. 
+ The TurtleBot 4 connects the Raspberry Pi with the [User Interface Board](pcba.md) through a 40 pin connector and a USB 3.0 (Type B) cable. The USB 3.0 type cable enables communication to 4 USB-C ports on the UI board, while the ribbon cable passes the 40 GPIO pins of the Raspberry Pi through to the UI Board.
 
 <figure class="aligncenter">
     <img src="media/ribbon_cable.png" alt="TurtleBot 4 40-pin" style="width: 80%"/>
@@ -13,7 +12,7 @@ The ribbon cable connecting the two stretches out from the Left of the board as 
 </figure>
 
 
-The TurtleBot 4 comes with a USB-A to USB-B 3.0 cable to connect the UI board and RPi. Without this connection the USB-C ports will not be able to communicate. They will be able to supply power regardless though.
+The TurtleBot 4 comes with a USB-A to USB-B 3.0 cable to connect the UI board and Raspberry Pi. Without this connection the USB-C ports will only be able to supply power, but not communication.
 
 <figure class="aligncenter">
     <img src="media/USB_B.png" alt="TurtleBot 4 USB Type B" style="width: 30%"/>
