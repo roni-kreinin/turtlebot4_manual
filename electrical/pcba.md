@@ -19,7 +19,7 @@ The TurtleBot 4 comes with an additional User Interface board that expands on th
 
 ## User I/O
 
-The TurtleBot 4 has a 2x20 pin internal connector connecting it to the Raspberry Pi via a flex cable, and another 2x12 pin connector allowing the user to access the remaining GPIOs and a set of 5, and 3.3V power pins coming from the Raspberry Pi.
+The TurtleBot 4 has a 2x20 pin internal connector connecting it to the Raspberry Pi via a flex cable, and another 2x12 pin connector allowing the user to access the remaining GPIOs and a set of 5V, and 3.3V power pins coming from the Raspberry Pi.
 
 The IO interface between the 2x20 connector and 2x12 connector and the available GPIOs to the user are shown in Table 1, and 2.
 The GPIO numbers are a direct match to the Raspberry Pi 4 [GPIO](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-datasheet.pdf).
@@ -265,7 +265,7 @@ ALL USER_PORTs are routed to the 2X12 Auxiliary connectors
                 <td>EEPROM_SD</td>
                 <td>11</td>
                 <td>12</td>
-                <td>USER_PORT</td>
+                <td>EEPROM_SC</td>
                 <td>GPIO1</td>
             </tr>
             <tr>
@@ -322,10 +322,10 @@ ALL USER_PORTs are routed to the 2X12 Auxiliary connectors
 
 ## User Power
 
-In addition to these GPIO ports, the user has two additional power ports available supplying 3.3V, 5V, 12V, VBATT (14.4V), and two grounds each. 
+In addition to these GPIO ports, the user has two additional power ports available supplying 3.3V, 5V, 12V, VBAT (14.4V), and two grounds each. 
 
 <figure class="aligncenter">
-    <img src="media/power_connectors.png" alt="TurtleBot 4 UI Power Connectors" style="width: 80%"/>
+    <img src="media/user_power_connectors.png" alt="TurtleBot 4 UI Power Connectors" style="width: 20%"/>
     <figcaption>TurtleBot 4 Additional Power Ports</figcaption>
 </figure>
 
@@ -395,136 +395,4 @@ The two connectors are both [6-Pin Molex PicoBlade P/N 0532610671](https://www.d
 
 ## User USB-C Ports
 
-The are 4 USB-C ports that go through an integrated hub on the User Interface board and connect to the Raspberry Pi through a single USB 3.0 cable. The current available to all 4 ports is 3A. Additionally, each individual port is current limited to 3A. In other words, each port is capable of supplying 3A if the others aren’t in use, or the available 3A is shared amongst ports that are in use. The bandwidth for communication is split among 4 dynamically depending on how many of the ports are communication at once.
-
-## Power Budget
-
-Table 4 provides a rough estimation of maximum power consumption of the User Interface board.
-
-<figure>
-    <figcaption style="text-align:center;">Table 4: TurtleBot 4 UI Board Power Budget</figcaption>
-    <table id="powerBudget" class="center-table">
-        <thead>
-            <tr>
-                <th>Source</th>
-                <th>Operating Voltage (V)</th>
-                <th>Max current draw (A)</th>
-                <th>Power (W)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>4 USB-C ports</td>
-                <td>5</td>
-                <td>3</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>USB Hub Controller</td>
-                <td>1.2</td>
-                <td>1.3</td>
-                <td>1.8</td>
-            </tr>
-            <tr>
-                <td>OLED Display</td>
-                <td>12</td>
-                <td>0.031</td>
-                <td>0.372</td>
-            </tr>
-            <tr>
-                <td rowspan=4>USER PWR Ports</td>
-                <td>14.4</td>
-                <td>0.3</td>
-                <td>4.32</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>0.3</td>
-                <td>3.6</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>0.5</td>
-                <td>2.5</td>
-            </tr>
-            <tr>
-                <td>3.3</td>
-                <td>0.25</td>
-                <td>0.825</td>
-            </tr>
-            <tr>
-                <td>OAK-D-Lite</td>
-                <td>5</td>
-                <td>1.2</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>OAK-D-Pro</td>
-                <td>5</td>
-                <td>1.5</td>
-                <td>7.5</td>
-            </tr>
-            <tr>
-                <td>RPLIDAR A1M8</td>
-                <td>5</td>
-                <td>0.6</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>Blower Fan (each)</td>
-                <td>5</td>
-                <td>0.25</td>
-                <td>1.25</td>
-            </tr>
-            <tr>
-                <td>Axial Fan (each)</td>
-                <td>5</td>
-                <td>0.15</td>
-                <td>0.75</td>
-            </tr>
-            <tr>
-                <td>Raspberry Pi 4B</td>
-                <td>5</td>
-                <td>0.8</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td rowspan=2>Total Power (max)</td>
-                <td colspan=2>TurtleBot 4</td>
-                <td>54</td>
-            </tr>
-            <tr>
-                <td colspan=2>TurtleBot 4 Lite</td>
-                <td>13</td>
-            </tr>
-        </tbody>
-    </table>
-</figure>
-
-```note
-Not accounting for inefficiencies of components, and power loss. Assuming 
-USB hub speed operating with all ports at SuperSpeed, and OLED is set to max 
-brightness
-```
-
-<!-- <figure>
-    <figcaption style="text-align:center;">Table 5: TurtleBot 4 Max Power Consumption</figcaption>
-    <table class="center-table">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Max estimated power consumption (W)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>TurtleBot 4</td>
-                <td>54</td>
-            </tr>
-            <tr>
-                <td>TurtleBot 4 Lite</td>
-                <td>13</td>
-            </tr>
-        </tbody>
-    </table>
-</figure> -->
+The are 4 USB-C ports that go through an integrated hub on the User Interface board and connect to the Raspberry Pi through a single USB 3.0 cable. The current available to all 4 ports is 3A. Additionally, each individual port is current limited to 3A. In other words, each port is capable of supplying 3A if the others aren’t in use, or the available 3A is shared amongst ports that are in use. The bandwidth for communication is split among 4 dynamically depending on how many of the ports are communication at once, and is limited by the USB 3.0 connection to the Raspberry Pi.
