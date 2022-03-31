@@ -15,3 +15,7 @@ On the TurtleBot 4, the connection of the User Interface board with the Create®
 The Create® 3 power adapter also supplies the Raspberry Pi 4 with power and communication through a <span style="color:red">USB 2.0 (Type C)</span> on both the TurtleBot 4 and TurtleBot 4 Lite. The USB interface can supply up to 3A at 5V.
 
 For more details, visit the [Create® 3 Documentation](https://iroboteducation.github.io/create3_docs/hw/electrical/).
+
+```warning
+It is recommended to not drain the robot below 20% as VBAT voltage begin to decline sharply at this level.
+```
