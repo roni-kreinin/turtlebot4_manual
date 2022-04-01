@@ -12,14 +12,14 @@ sort: 3
 
 - On the first boot, the Raspberry Pi will enter AP mode which will allow you to connect to it over WiFi.
 
-- On a PC, connect to the `TurtleBot 4` WiFi network. The password is also `TurtleBot 4`.
+- On a PC, connect to the `TurtleBot4` WiFi network. The password is also `TurtleBot4`.
 
 - Once connected, you can SSH into the Raspberry Pi to configure its WiFi.
 
 ```bash
 ssh ubuntu@10.42.0.1
 ```
-- The default password is `TurtleBot 4`
+- The default password is `turtlebot4`
 
 - In the home folder there will be a script called `wifi.sh` which can be used to configure the Raspberry Pi's WiFi:
 
@@ -40,6 +40,12 @@ The Regulatory domain is based on the country you live in. For a full list, clic
 ssh ubuntu@xxx.xxx.xxx.xxx
 ```
 
+If you wish to put the Raspberry Pi back into AP mode, you can call
+
+```bash
+bash ~/wifi.sh -a
+```
+
 ## Create® 3 WiFi Setup
 
 - Press both Create® 3 button 1 and 2 simultaneously until light ring turns blue
@@ -50,6 +56,10 @@ ssh ubuntu@xxx.xxx.xxx.xxx
 - On your PC, run `ros2 topic list` to ensure that the Create® 3 is publishing its topics.
 
 ## TurtleBot 4 Controller Setup
+
+The TurtleBot 4 comes with an included TurtleBot 4 Controller. It is paired in advance with the Raspberry Pi.
+
+If you wish to manually pair a controller, follow these instructions:
 
 - SSH into the TurtleBot 4
 
@@ -67,3 +77,95 @@ sudo bluetoothctl --agent=NoInputNoOutput
 - Finally, enter `connect MAC_ADDRESS`.
 - The CLI should report that the controller has been connected and the light on the controller will turn blue.
 - Enter `exit` to exit the CLI. 
+
+## Updating the TurtleBot 4
+
+It is recommended to update the TurtleBot 4 when you first use it to receive the latest bug fixes and improvements.
+
+### Debian packages
+
+Debian packages can be updated by calling:
+
+```bash
+sudo apt update
+sudo apt install <PACKAGE>
+```
+
+For example, updating the `turtlebot4_desktop` package can be done like this:
+
+```bash
+sudo apt update
+sudo apt install ros-galactic-turtlebot4-desktop
+```
+
+### Source packages
+
+To update a source package you will need to use a terminal to manually pull changes.
+
+For example, updating the `turtlebot4_robot` package on the `galactic` branch:
+
+```bash
+cd ~/turtlebot4_ws/src/turtlebot4_robot
+git checkout galactic
+git pull origin galactic
+```
+
+You will then need to rebuild the packages:
+
+```bash
+cd ~/turtlebot4_ws
+source /opt/ros/galactic/setup.bash
+colcon build --symlink-install
+source install/setup.bash
+```
+
+### Install latest Raspberry Pi image
+
+```warning
+Installing a new image on the Raspberry Pi will delete any changes you may have made. Save your changes before proceeding.
+```
+
+If you wish to install the latest image onto your robot, follow these instructions.
+
+The latest TurtleBot 4 Raspberry Pi images are available at http://download.ros.org/downloads/turtlebot4/.
+
+- Download the latest image for your robot model and extract it. 
+- Power off your robot and then remove the microSD card from the Raspberry Pi.
+- Insert the microSD card into your PC. You may need an adapter.
+- Install the imaging tool `dcfldd`
+
+```bash
+sudo apt install dcfldd
+```
+- Identify your SD card
+
+```bash
+sudo fdisk -l
+```
+
+- The SD card should have a name like `/dev/mmcblk0` or `/dev/sda`.
+
+- If you wish to backup your current image, do so now:
+
+```bash
+sudo dd if=/dev/<SD_NAME> of=<IMAGE_PATH> bs=1M
+```
+
+```note
+SD_NAME is the device name (`mmcblk0`, `sda`, etc.).
+
+IMAGE_PATH is the path to where you want the image saved -- e.g., `~/turtlebot4_images/backup_image`.
+```
+
+- Get the SD flash script from `turtlebot4_setup` and flash the SD card:
+
+```bash
+wget https://raw.githubusercontent.com/turtlebot/turtlebot4_setup/galactic/scripts/sd_flash.sh
+bash sd_flash.sh /path/to/downloaded/image
+```
+- Follow the instructions and wait for the SD card to be flashed. Remove the SD card from your PC.
+- Ensure your Raspberry Pi 4 is not powered on before inserting the flashed SD card.
+- Follow [WiFi Setup](#wifi-setup) to configure your WiFi.
+
+
+

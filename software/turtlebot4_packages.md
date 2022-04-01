@@ -12,7 +12,11 @@ The `turtlebot4` metapackage contains common packages that are used by both `tur
 
 ### Installation
 
-The `turtlebot4` metapackage is automatically installed when either of `turtlebot4_robot` or `turtlebot4_simulator` is installed.
+Source code is available [here](https://github.com/turtlebot/turtlebot4).
+
+```note
+The `turtlebot4` packages are automatically installed when either of `turtlebot4_robot` or `turtlebot4_simulator` is installed.
+```
 
 #### Debian installation
 
@@ -81,8 +85,8 @@ The TurtleBot 4 can also use all of the actions, messages, and services that the
 * [InterfaceButtons](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/InterfaceButtons.msg): Status of the 3 interface buttons on the Create® robot faceplate.
 * [IrIntensity](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/IrIntensity.msg): Reading from an IR intensity sensor.
 * [IrIntensityVector](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/IrIntensityVector.msg): Vector of current IR intensity readings from all sensors.
-* [IrOpcode](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/IrOpcode.msg): Opcode detected by the robot IR receivers.
-* [KidnapStatus](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/KidnapStatus.msg): Whether the robot is currently kidnapped or not.
+* [IrOpcode](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/IrOpcode.msg): Opcode detected by the robot IR receivers. Used to detect the dock and virtual walls.
+* [KidnapStatus](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/KidnapStatus.msg): Whether the robot has been picked up off the ground.
 * [LedColor](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/LedColor.msg): RGB values for an LED.
 * [LightringLeds](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/LightringLeds.msg): Command RGB values of 6 lightring lights.
 * [Mouse](https://github.com/iRobotEducation/irobot_create_msgs/blob/main/msg/Mouse.msg): Reading from a mouse sensor.
@@ -386,7 +390,6 @@ The display has a header line which contains the IP address of the Wi-Fi interfa
 The menu can have any number of entries. If there are more than 5 entries, the user will have to scroll down to see the entries that do not fit on the 5 menu lines.
 ```
 
-
 ##### Menu Control
 
 The TurtleBot 4 display has a simple scrolling menu. There are 4 control functions for the menu: Scroll up, Scroll down, Select, and Back. 
@@ -402,7 +405,11 @@ The TurtleBot 4 display has a simple scrolling menu. There are 4 control functio
 
 ## TurtleBot 4 Robot
 
-The `turtlebot4_robot` metapackage contains packages that are used by the physical TurtleBot 4 robot and are run on the robots Raspberry Pi.
+Source code is available [here](https://github.com/turtlebot/turtlebot4_robot).
+
+```note
+The `turtlebot4_robot` metapackage contains packages that are used by the physical TurtleBot 4 robot and are run on the Raspberry Pi.
+```
 
 ### Installation
 
@@ -499,6 +506,58 @@ turtlebot4_base_node:
 The value for each GPIO device is the GPIO number, NOT the pin number.
 ```
 
+#### Robot Upstart
+
+The robot uses the [robot_upstart](https://github.com/clearpathrobotics/robot_upstart/tree/foxy-devel) package to install the bringup launch files as a background process that launches when the robot starts. The launch files are located under the `turtlebot4_bringup` package.
+
+To check if the TurtleBot 4 service is running, use this command on the Raspberry Pi:
+
+```bash
+systemctl | grep turtlebot4
+```
+
+If the service is active, the CLI will echo `turtlebot4.service  loaded active running   "bringup turtlebot4"`.
+
+To stop the service, call:
+
+```bash
+sudo systemctl stop turtlebot4.service
+```
+
+This will kill all of the nodes launched by the launch file. 
+
+```note
+The service will automatically start again on reboot. To fully disable the service, uninstall the job.
+```
+
+To start the service again, call:
+
+```bash
+sudo systemctl start turtlebot4.service
+```
+
+The launch files are installed on the TurtleBot 4 with this command:
+
+```bash
+ros2 run robot_upstart install turtlebot4_bringup/launch/standard.launch.py --job turtlebot4
+```
+
+and on the TurtleBot 4 Lite with this command:
+
+```bash
+ros2 run robot_upstart install turtlebot4_bringup/launch/lite.launch.py --job turtlebot4
+```
+
+To uninstall, use this command:
+
+```bash
+ros2 run robot_upstart uninstall turtlebot4
+```
+
+Once uninstalled, the launch file will no longer be launched on boot.
+
+
+
 ### Bringup
 
 The `turtlebot4_bringup` package contains the launch and configuration files to run the robots software.
@@ -580,7 +639,7 @@ This will launch a CLI menu where the different tests can be run.
 Enter the index of the test and hit enter to start the test. Some tests will run automatically while others require user input.
 
 <figure class="aligncenter">
-    <img src="media/ros_tests.png" alt="rqt_robot_monitor" style="width: 25%"/>
+    <img src="media/ros_tests.png" alt="ROS tests" style="width: 25%"/>
     <figcaption>Running the Light Ring test</figcaption>
 </figure>
 
@@ -591,7 +650,11 @@ The `turtlebot4_desktop` metapackage contains packages used for visualising and 
 
 ### Installation
 
+Source code is available [here](https://github.com/turtlebot/turtlebot4_desktop).
+
+```note
 The `turtlebot4_desktop` metapackage can be installed on a PC running Ubuntu Desktop 20.04 with ROS2 Galactic.
+```
 
 #### Debian installation
 
@@ -637,7 +700,11 @@ The `turtlebot4_simulator` metapackage contains packages used to simulate the Tu
 
 ### Installation
 
+Source code is available [here](https://github.com/turtlebot/turtlebot4_simulator).
+
+```note
 The `turtlebot4_simulator` metapackage can be installed on a PC running Ubuntu Desktop 20.04 with ROS2 Galactic.
+```
 
 #### Dev Tools
 
