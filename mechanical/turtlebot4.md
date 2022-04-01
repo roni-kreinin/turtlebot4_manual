@@ -4,175 +4,72 @@ sort: 1
 
 # TurtleBot 4
 
-Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+TurtleBot 4 is designed to be modified to meet your needs and make it possible to attach additional sensors and accessories. 
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+## Attaching Accessories to the Top Integration Plate
+The TurtleBot 4 is equipped with an acrylic plate at the top that is easy to modify in order to attach additional sensors and peripherals.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
-
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
-
-# Header 1
-
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-## Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
+```warning
+Modifications to the plate should only be done when it is removed from the robot, attempting to modify the plate while mounted can cause the plastic to crack.
 ```
 
-#### Header 4
+### Removing the Top Integration Plate
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+The plate is attached to the robot by four Round head M4x0.7 screws. Remove the screws by using a 2.5mm hex key.
 
-##### Header 5
+<figure class="aligncenter">
+    <img src="media/top_plate.png" alt="TurtleBot 4 Top plate screws" style="width: 50%"/>
+    <figcaption>TurtleBot 4 Top Integration Plate screw locations</figcaption>
+</figure>
+ 
+### Making Modifications to the Top Integration Plate
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
+Modifying the plate can be done roughly by hand, however a 3D model and 2D drawing of the part is available at [Github](https://github.com/turtlebot/turtlebot4-hardware). When cutting or drilling into the plate, ensure proper safety precautions are taken; wear safety glasses, be familiar with your tools, fasten the plate securely to a work surface. When working with acrylic, it is best to start with a smaller hole (Ø3mm) and enlarge it to the desired size incrementally.
 
-###### Header 6
+To reattach the plate, insert the screws and torque them to 120N-cm. With additional weight on the top integration plate, it is recommended that a low or medium strength thread locker is used for additional security.
+ 
+## Attaching Accessories to the Base Unit
 
-| What    | Follows  |
-| ------- | -------- |
-| A table | A header |
-| A table | A header |
-| A table | A header |
+There is space for sensors to be attached to the base unit above the PCBA as well as near the Create® 3 User Buttons and inside the Shell.
 
----
+To attach accessories above the PCBA, mounting brackets can be designed for the desired accessory and attached to the TurtleBot 4 by securing them to the standoffs. 3D models of the TurtleBot4 are available on [Github](https://github.com/turtlebot/turtlebot4-hardware) that can help in the design process.
 
-There's a horizontal rule above and below this.
+To attach accessories inside the Shell, the [PCBA](#removing-the-pcba) and the [Create® 3 Integration Plate](#removing-the-create%C2%AE-3-integration-plate-and-shell) should be removed. Inside, the existing holes can be used or additional mounting features can be machined or 3D printed.
 
----
+To attach accessories to the Create® 3, the existing holes in the plate can be used, or additional holes can be drilled by [removing the Create® 3 Integration Plate](#removing-the-create%C2%AE-3-integration-plate-and-shell).
 
-Here is an unordered list:
+<figure class="aligncenter">
+    <img src="media/base_unit.png" alt="Create 3 attachment" style="width: 50%"/>
+    <figcaption>TurtleBot 4 Attachment Locations</figcaption>
+</figure>
 
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
+## Removing the PCBA
+ 
+To access the inside of the “Shell” of the TurtleBot4, the PCBA can be removed. Ensure that you have a safe spot to place the PCBA when it is removed to prevent damage to the components. It is recommended that this procedure is done on an Electrostatic Discharge Mat to protect the PCBA from damage caused by static electricity.
+Follow the steps below to remove the PCBA.
 
-And an ordered list:
+1. Disconnect the USB cables connected to the Oak-D Camera and the RPLIDAR. Feed these cables through the opening at the back of the Robot.
 
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
+<figure class="aligncenter">
+    <img src="media/remove_pcba.png" alt="TurtleBot 4 Cables" style="width: 50%"/>
+    <figcaption>TurtleBot 4 Cable passthrough</figcaption>
+</figure>
 
-And an unordered task list:
+2. [Remove the Top Integration Plate](#removing-the-top-integration-plate) and the four standoffs.
+3. Carefully lift the PCBA by holding the camera bracket or the RPLIDAR base.
+4. Disconnect the USB-B cable, the power harness, the 40 pin ribbon cable, and the fan cable, as well as any other cables that may have been attached.
 
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
+The PCBA should now be free to be removed and placed safely.
 
-And a "mixed" task list:
+## Removing the Create® 3 Integration Plate and Shell
 
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
+The Create® 3 Integration Plate and Shell can be removed with the rest of the assembly on or off. To remove the Create® 3 Integration Plate, first open and remove the rear Create® 3 tray. Then disconnect the USB C cable and the power harness from the Create® 3 base. Feed these cables through the slot at the back of the Create® 3. Using the tabs on the Create® 3, twist the plate counter-clockwise until it snaps to unlock it and remove the plate.
 
-And a nested list:
+<figure class="aligncenter">
+    <img src="media/remove_create3.png" alt="Create 3 plate removal" style="width: 50%"/>
+    <figcaption>Create® 3 Integration Plate Removal</figcaption>
+</figure>
 
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
+To reattach the plate, place the plate slightly angled such that the posts fit into the tabs. Then, twist the plate clockwise until it snaps back into place.
 
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
 
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
-
----
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist          | Album          | Year |
-| --------------- | -------------- | ---- |
-| Michael Jackson | Thriller       | 1982 |
-| Prince          | Purple Rain    | 1984 |
-| Beastie Boys    | License to Ill | 1986 |
-
-If a table is too wide, it should condense down and/or scroll horizontally.
-
-<!-- prettier-ignore-start -->
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-<!-- prettier-ignore-end -->
-
----
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-var foo = "bar";
-```
-
-Code can also use syntax highlighting.
-
-```javascript
-var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language   | Code               |
-| ---------- | ------------------ |
-| Javascript | `var foo = "bar";` |
-| Ruby       | `foo = "bar"`      |
-
----
-
-Small images should be shown at their actual size.
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-Large images should always scale down and fit in the content container.
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```

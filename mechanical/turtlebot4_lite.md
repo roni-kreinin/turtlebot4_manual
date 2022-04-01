@@ -4,175 +4,39 @@ sort: 2
 
 # TurtleBot 4 Lite
 
-Text can be **bol d**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+TurtleBot Lite is built on the iRobot Create® 3 learning platform which features an easy to modify integration plate.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+## Attaching Accessories to the Base Unit
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+There is space for sensors and accessories to be attached to the base unit around the Oak Camera and RPILIDAR. To attach accessories to the Create® 3, the existing holes in the plate can be used. These Ø3.5mm holes are spaced apart 10mm. Alternatively, holes can be drilled by [removing the Create® 3 Integration Plate](#removing-the-create%C2%AE-3-integration-plate). 3D models of the robot are available on [Github](https://github.com/turtlebot/turtlebot4-hardware) which can help in the design.
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
+<figure class="aligncenter">
+    <img src="media/lite_integration_plate.png" alt="Create 3 Integration Plate" style="width: 50%"/>
+    <figcaption>TurtleBot 4 Lite Integration</figcaption>
+</figure>
 
-# Header 1
+## Removing the Create® 3 Integration Plate
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+The Create® 3 Integration Plate can be removed. To remove the Create® 3 Integration Plate follow the steps below.
 
-## Header 2
+1. Disconnect the USB cables connected to the Oak-D Camera and the RPLIDAR. Feed these cables through the slot opening at the back of the Robot.
 
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
+<figure class="aligncenter">
+    <img src="media/lite_cable_passthrough.png" alt="TurtleBot 4 Lite cables" style="width: 50%"/>
+    <figcaption>TurtleBot 4 Lite Cable Passthrough</figcaption>
+</figure>
 
-### Header 3
+2. Using the tabs on the Create® 3, twist the plate counter-clockwise until it snaps to unlock it and remove the plate.
 
-```
-This is a code block following a header.
-```
+<figure class="aligncenter">
+    <img src="media/lite_remove_create3.png" alt="TurtleBot 4 Lite remove integration" style="width: 50%"/>
+    <figcaption>Create® 3 Integration Plate Removal</figcaption>
+</figure>
 
-#### Header 4
+To reattach the plate, place the plate slightly angled such that the posts fit into the tabs. Then, twist the plate clockwise until it snaps back into place. Open the rear tray and feed the USB cables that were previously disconnected through the slot. Attach the USB-C cable to the Oak-Camera and connect the USB Micro cable to the RPLIDAR.
 
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
+## Accessing the Raspberry Pi Computer
 
-##### Header 5
+The Raspberry Pi is found in the rear tray of the robot. To fully access the Raspberry Pi, disconnect the USB cables connected to the Oak Camera and RPLIDAR and feed them through the slot opening at the rear of the robot. You can now carefully slide out the tray.
+ 
 
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What    | Follows  |
-| ------- | -------- |
-| A table | A header |
-| A table | A header |
-| A table | A header |
-
----
-
-There's a horizontal rule above and below this.
-
----
-
-Here is an unordered list:
-
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
-
-And an ordered list:
-
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
-
-And an unordered task list:
-
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
-
-And a nested list:
-
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
-
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
-
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
-
----
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist          | Album          | Year |
-| --------------- | -------------- | ---- |
-| Michael Jackson | Thriller       | 1982 |
-| Prince          | Purple Rain    | 1984 |
-| Beastie Boys    | License to Ill | 1986 |
-
-If a table is too wide, it should condense down and/or scroll horizontally.
-
-<!-- prettier-ignore-start -->
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-<!-- prettier-ignore-end -->
-
----
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-var foo = "bar";
-```
-
-Code can also use syntax highlighting.
-
-```javascript
-var foo = "bar";
-```
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language   | Code               |
-| ---------- | ------------------ |
-| Javascript | `var foo = "bar";` |
-| Ruby       | `foo = "bar"`      |
-
----
-
-Small images should be shown at their actual size.
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-Large images should always scale down and fit in the content container.
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```
