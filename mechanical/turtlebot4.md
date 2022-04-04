@@ -26,7 +26,7 @@ The plate is attached to the robot by four Round head M4x0.7 screws. Remove the 
 
 Modifying the plate can be done roughly by hand, however a 3D model and 2D drawing of the part is available at [Github](https://github.com/turtlebot/turtlebot4-hardware). When cutting or drilling into the plate, ensure proper safety precautions are taken; wear safety glasses, be familiar with your tools, fasten the plate securely to a work surface. When working with acrylic, it is best to start with a smaller hole (Ø3mm) and enlarge it to the desired size incrementally.
 
-To reattach the plate, insert the screws and torque them to 120N-cm. With additional weight on the top integration plate, it is recommended that a low or medium strength thread locker is used for additional security.
+To reattach the plate, insert the screws and torque them to 120 N-cm. With additional weight on the top integration plate, it is recommended that a low or medium strength thread locker is used for additional security.
  
 ## Attaching Accessories to the Base Unit
 
@@ -48,14 +48,14 @@ To attach accessories to the Create® 3, the existing holes in the plate can be 
 To access the inside of the “Shell” of the TurtleBot4, the PCBA can be removed. Ensure that you have a safe spot to place the PCBA when it is removed to prevent damage to the components. It is recommended that this procedure is done on an Electrostatic Discharge Mat to protect the PCBA from damage caused by static electricity.
 Follow the steps below to remove the PCBA.
 
-1. Disconnect the USB cables connected to the Oak-D Camera and the RPLIDAR. Feed these cables through the opening at the back of the Robot.
+1. [Remove the Top Integration Plate](#removing-the-top-integration-plate) and the four standoffs.
+2. Disconnect the USB cables connected to the Oak-D Camera and the RPLIDAR. Feed these cables through the opening at the back of the Robot.
 
-<figure class="aligncenter">
-    <img src="media/remove_pcba.png" alt="TurtleBot 4 Cables" style="width: 50%"/>
-    <figcaption>TurtleBot 4 Cable passthrough</figcaption>
-</figure>
+    <figure class="aligncenter">
+        <img src="media/remove_pcba.png" alt="TurtleBot 4 Cables" style="width: 50%"/>
+        <figcaption>TurtleBot 4 Cable passthrough</figcaption>
+    </figure>
 
-2. [Remove the Top Integration Plate](#removing-the-top-integration-plate) and the four standoffs.
 3. Carefully lift the PCBA by holding the camera bracket or the RPLIDAR base.
 4. Disconnect the USB-B cable, the power harness, the 40 pin ribbon cable, and the fan cable, as well as any other cables that may have been attached.
 
