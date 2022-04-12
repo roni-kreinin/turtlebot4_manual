@@ -21,10 +21,10 @@ ssh ubuntu@10.42.0.1
 ```
 - The default password is `turtlebot4`
 
-- In the home folder there will be a script called `wifi.sh` which can be used to configure the Raspberry Pi's WiFi:
+- In `/usr/local/bin` there will be a script called `wifi.sh` which can be used to configure the Raspberry Pi's WiFi:
 
 ```bash
-bash ~/wifi.sh -s "YOUR_WIFI_SSID" -p "YOUR_WIFI_PASSWORD" -c YOUR_REGULATORY_DOMAIN && sudo reboot
+sudo wifi.sh -s "YOUR_WIFI_SSID" -p "YOUR_WIFI_PASSWORD" -c YOUR_REGULATORY_DOMAIN && sudo reboot
 ```
 
 ```note
@@ -43,7 +43,7 @@ ssh ubuntu@xxx.xxx.xxx.xxx
 If you wish to put the Raspberry Pi back into AP mode, you can call
 
 ```bash
-bash ~/wifi.sh -a
+sudo wifi.sh -a
 ```
 
 ## Create® 3 WiFi Setup
@@ -80,7 +80,41 @@ sudo bluetoothctl --agent=NoInputNoOutput
 
 ## Updating the TurtleBot 4
 
-It is recommended to update the TurtleBot 4 when you first use it to receive the latest bug fixes and improvements.
+It is recommended to update both the Create® 3 and the Raspberry Pi when you first use it to receive the latest bug fixes and improvements.
+
+### Create® 3
+
+#### Update over USB-C
+
+Download the latest firmware from <http://edu.irobot.com/create3-latest-fw>.
+
+Copy the firmware to the Raspberry Pi:
+
+```bash
+sudo scp ~/Downloads/Create3-G.X.Y.swu ubuntu@xxx.xxx.xxx.xxx:/home/ubuntu/
+```
+
+SSH into the Raspberry Pi and update the Create® 3 firmware over USB-C:
+
+```bash
+sudo create_update.sh Create3-G.X.Y.swu
+```
+
+or
+
+```bash
+curl -X POST --data-binary @Create3-G.X.Y.swu http://192.168.186.2/api/firmware-update
+```
+
+This may take a few minutes.
+
+#### Update over WiFi
+
+Find the IP address of the Create 3 on your WiFi network.
+
+Enter the IP address into a browser. You will be taken to the Create 3 portal.
+
+Click on update and either upload 
 
 ### Debian packages
 
