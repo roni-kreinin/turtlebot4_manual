@@ -518,6 +518,12 @@ systemctl | grep turtlebot4
 
 If the service is active, the CLI will echo `turtlebot4.service  loaded active running   "bringup turtlebot4"`.
 
+To read the most recent logs from the service, call:
+
+```bash
+sudo journalctl -u turtlebot4 -r
+```
+
 To stop the service, call:
 
 ```bash
@@ -555,7 +561,6 @@ ros2 run robot_upstart uninstall turtlebot4
 ```
 
 Once uninstalled, the launch file will no longer be launched on boot.
-
 
 
 ### Bringup

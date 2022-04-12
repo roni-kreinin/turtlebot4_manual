@@ -24,7 +24,7 @@ ssh ubuntu@10.42.0.1
 - In `/usr/local/bin` there will be a script called `wifi.sh` which can be used to configure the Raspberry Pi's WiFi:
 
 ```bash
-sudo wifi.sh -s "YOUR_WIFI_SSID" -p "YOUR_WIFI_PASSWORD" -c YOUR_REGULATORY_DOMAIN && sudo reboot
+sudo wifi.sh -s "YOUR_WIFI_SSID" -p "YOUR_WIFI_PASSWORD" -r YOUR_REGULATORY_DOMAIN && sudo reboot
 ```
 
 ```note
