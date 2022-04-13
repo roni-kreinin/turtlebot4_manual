@@ -18,12 +18,6 @@ Source code is available [here](https://github.com/turtlebot/turtlebot4).
 The `turtlebot4` packages are automatically installed when either of `turtlebot4_robot` or `turtlebot4_simulator` is installed.
 ```
 
-#### Debian installation
-
-To manually install the debian metapackage, use apt:
-
-TODO
-
 #### Source installation
 
 To manually install this metapackage from source, clone the git repository:
@@ -415,12 +409,6 @@ The `turtlebot4_robot` metapackage contains packages that are used by the physic
 
 The `turtlebot4_robot` metapackage is pre-installed on the TurtleBot 4 Raspberry Pi image.
 
-#### Debian installation
-
-To manually install the debian metapackage, use apt:
-
-TODO
-
 #### Source installation
 
 To manually install this metapackage from source, clone the git repository:
@@ -661,12 +649,6 @@ Source code is available [here](https://github.com/turtlebot/turtlebot4_desktop)
 The `turtlebot4_desktop` metapackage can be installed on a PC running Ubuntu Desktop 20.04 with ROS2 Galactic.
 ```
 
-#### Debian installation
-
-To manually install the debian metapackage, use apt:
-
-TODO
-
 #### Source installation
 
 To manually install this metapackage from source, clone the git repository:
@@ -730,12 +712,6 @@ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `ls
 wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 sudo apt-get update && sudo apt-get install ignition-edifice
 ```
-
-#### Debian installation
-
-To manually install the debian metapackage, use apt:
-
-TODO
 
 #### Source installation
 

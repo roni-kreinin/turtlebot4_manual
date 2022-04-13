@@ -49,11 +49,17 @@ sudo wifi.sh -a
 ## Create® 3 WiFi Setup
 
 - Press both Create® 3 button 1 and 2 simultaneously until light ring turns blue
-- The Create® 3 is now in AP mode. Connect to its WiFi 'Create-XXXX'
+
+<figure class="aligncenter">
+    <img src="media/create_ap_mode.jpg" alt="Create AP mode" style="width: 70%"/>
+    <figcaption>Putting the Create® 3 in AP mode</figcaption>
+</figure>
+
+- The Create® 3 is now in AP mode. Connect to its WiFi network called 'Create-XXXX'
 - In a browser go to 192.168.10.1
 - Click connect and enter your WiFi ssid and password
-- Wait for it to connect to WiFi
-- On your PC, run `ros2 topic list` to ensure that the Create® 3 is publishing its topics.
+- Wait for it to connect to WiFi and play a chime
+- On your PC, run `ros2 topic list` to ensure that the Create® 3 is publishing its topics
 
 ## TurtleBot 4 Controller Setup
 
@@ -70,6 +76,12 @@ sudo bluetoothctl --agent=NoInputNoOutput
 - The `bluetoothd` CLI interface will start.
 - Type `scan on` and press enter.
 - Press and hold both the home and share buttons on the TurtleBot 4 controller until the light starts blinking.
+
+<figure class="aligncenter">
+    <img src="media/controller.jpg" alt="TurtleBot 4 Controller" style="width: 70%"/>
+    <figcaption>Putting the TurtleBot 4 in pair mode</figcaption>
+</figure>
+
 - In the CLI look for a *Wireless Controller* device to be found. It will have a MAC address similar to `A0:5A:5C:DF:4D:7F`.
 - Copy the MAC address.
 - In the CLI enter `trust MAC_ADDRESS`, replacing `MAC_ADDRESS` with the controllers address.

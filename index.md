@@ -1,9 +1,8 @@
 # Turtlebot4 User Manual
 
 <figure class="aligncenter">
-    <img src="media/TurtleBot4.jpg" alt="TurtleBot4" style="width: 49%"/>
-    <img src="media/TurtleBot4-Lite.jpg" alt="TurtleBot4 Lite" style="width: 49%"/>
-    <figcaption>TurtleBot 4 (left) and TurtleBot 4 Lite (right)</figcaption>
+    <img src="media/TurtleBot4.jpg" alt="TurtleBot4" style="width: 90%"/>
+    <figcaption>TurtleBot 4 Lite (left) and TurtleBot 4 (right)</figcaption>
 </figure>
 
 TurtleBot 4 is the next-generation of the world’s most popular open source robotics platform for education and research, offering better computing power, better sensors and a world class user experience at an affordable price point.

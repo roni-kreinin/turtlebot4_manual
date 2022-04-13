@@ -4,8 +4,6 @@ sort: 6
 
 # Nav2
 
-TODO: Add images from real robot
-
 [Nav2](https://navigation.ros.org/) is the official navigation stack in ROS2. Nav2 can be used to calculate and execute a travel path for the robot by using a map of its surroundings. The map can be loaded at launch or generated with [SLAM](slam.md) while navigating.
 
 

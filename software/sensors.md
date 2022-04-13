@@ -69,10 +69,6 @@ AI examples are available on the DepthAI [github](https://github.com/luxonis/dep
 ssh ubuntu@192.168.0.15 -X
 ```
 
-### Enabling IR dot projector (OAK-D-Pro only)
-
-TODO
-
 ## Create® 3
 
 The Create® 3 comes with several sensors for safety, object detection, and odometry. For more information on the physical location of the sensors, read the Create® 3 [Hardware Overview](https://iroboteducation.github.io/create3_docs/hw/overview/). Hazards detected by the robot are published to the */hazard_detection* topic, although some sensors also have their own individual topics

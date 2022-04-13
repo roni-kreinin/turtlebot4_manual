@@ -15,10 +15,6 @@ Requirements:
 Recommended:
 - PC with dedicated GPU
 
-### Debian
-
-TODO
-
 ### Source
 
 #### Install

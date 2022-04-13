@@ -37,6 +37,9 @@ To reattach the plate, place the plate slightly angled such that the posts fit i
 
 ## Accessing the Raspberry Pi Computer
 
-The Raspberry Pi is found in the rear tray of the robot. To fully access the Raspberry Pi, disconnect the USB cables connected to the Oak Camera and RPLIDAR and feed them through the slot opening at the rear of the robot. You can now carefully slide out the tray.
+The Raspberry Pi is found in the rear tray of the robot. To fully access the Raspberry Pi, disconnect the USB cables connected to the Oak Camera and RPLIDAR and feed them through the slot opening at the rear of the robot. You can now carefully slide out the cargo bay.
  
-
+<figure class="aligncenter">
+    <img src="media/create_tray.jpg" alt="Create 3 Tray" style="width: 50%"/>
+    <figcaption>Create® 3 Cargo Bay removal</figcaption>
+</figure>
